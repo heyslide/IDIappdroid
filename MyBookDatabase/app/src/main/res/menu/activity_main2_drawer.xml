@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_afegir"
+            android:icon="@drawable/ic_control_point_black_24dp"
+            android:title="@string/Add"/>
+        <item
+            android:id="@+id/nav_registrar"
+            android:icon="@drawable/ic_add_black_24dp"
+            android:title="@string/Registrar"/>
+        <item
+            android:id="@+id/nav_esborrarprimer"
+            android:icon="@drawable/ic_delete_black_24dp"
+            android:title="@string/Delete"/>
+        <item
+            android:id="@+id/nav_valoracio"
+            android:icon="@drawable/ic_mode_edit_black_24dp"
+            android:title="@string/Valoracio"/>
+    </group>
+
+    <item android:title="@string/Cerca"
+          android:icon="@drawable/ic_search_black_24dp">
+        <menu>
+            <item
+                android:id="@+id/nav_autor"
+                android:icon="@drawable/ic_search_black_24dp"
+                android:title="@string/Autor"/>
+            <item
+                android:id="@+id/nav_titol"
+                android:icon="@drawable/ic_search_black_24dp"
+                android:title="@string/Titol"/>
+            <item
+                android:id="@+id/nav_categoria"
+                android:icon="@drawable/ic_search_black_24dp"
+                android:title="@string/Categoria"/>
+        </menu>
+    </item>
+
+</menu>
