@@ -1,5 +1,6 @@
 package com.example.pr_idi.mydatabaseexample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -135,6 +136,9 @@ public class Main2Activity extends AppCompatActivity
             }
 
         } else if (id == R.id.nav_autor) {
+
+            Intent i = new Intent(this, ByAuthor.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_titol) {
 

@@ -14,6 +14,8 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import static com.example.pr_idi.mydatabaseexample.MySQLiteHelper.COLUMN_AUTHOR;
+
 public class BookData {
 
     // Database fields
@@ -24,7 +26,7 @@ public class BookData {
 
     // Here we only select Title and Author, must select the appropriate columns
     private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
-            MySQLiteHelper.COLUMN_TITLE, MySQLiteHelper.COLUMN_AUTHOR};
+            MySQLiteHelper.COLUMN_TITLE, COLUMN_AUTHOR};
 
     public BookData(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -45,7 +47,7 @@ public class BookData {
         // Add data: Note that this method only provides title and author
         // Must modify the method to add the full data
         values.put(MySQLiteHelper.COLUMN_TITLE, title);
-        values.put(MySQLiteHelper.COLUMN_AUTHOR, author);
+        values.put(COLUMN_AUTHOR, author);
 
         // Invented data
         values.put(MySQLiteHelper.COLUMN_PUBLISHER, "Do not know");
@@ -100,14 +102,22 @@ public class BookData {
         return books;
     }
 
-   /* public List<Book> getBooksAuthor(String Author) {
+    public List<Book> getBooksAuthor(String Author) {
 
         List<Book> books = new ArrayList<>();
 
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS,
+                allColumns, null, null, COLUMN_AUTHOR, Author, null);
 
-
-
-    }*/
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Book book = cursorToBook(cursor);
+            books.add(book);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return books;
+    }
 
     private Book cursorToBook(Cursor cursor) {
         Book book = new Book();

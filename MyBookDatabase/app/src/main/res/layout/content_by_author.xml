@@ -25,17 +25,25 @@
             <TextView android:id="@+id/nomautor"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
+                      android:textSize="16dp"
                       android:text="AUTHOR NAME:"/>
 
             <EditText android:id="@+id/nomautorinsertat"
                       android:layout_width="match_parent"
-                      android:layout_height="wrap_content"/>
+                      android:layout_height="wrap_content"
+                      android:textSize="16dp"/>
         </LinearLayout>
 
-    <Button android:id="@+id/boto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Cerca"/>
+        <Button android:id="@+id/boto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Cerca"/>
+
+        <ListView android:id="@+id/list_autor"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+        </ListView>
 
     </LinearLayout>
 
