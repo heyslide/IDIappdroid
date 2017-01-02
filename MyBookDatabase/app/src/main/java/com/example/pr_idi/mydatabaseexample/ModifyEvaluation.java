@@ -27,7 +27,7 @@ public class ModifyEvaluation extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        bookData = new BookData(this);
+       /* bookData = new BookData(this);
         bookData.open();
 
         List<Book> values = bookData.getAllBooks();
@@ -37,15 +37,15 @@ public class ModifyEvaluation extends AppCompatActivity {
         // elements in a ListView
         ArrayAdapter<Book> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, values);
-        list.setAdapter(adapter);
+        list.setAdapter(adapter);*/
 
-        ArrayAdapter<Book> adapter = (ArrayAdapter<Book>) list.getAdapter();
+        //ArrayAdapter<Book> adapter = (ArrayAdapter<Book>) list.getAdapter();
 
-        while ()
+      //  while ()
 
-        book = bookData.createBook(newBook[nextInt*2], newBook[nextInt*2 + 1]);
+      /*  book = bookData.createBook(newBook[nextInt*2], newBook[nextInt*2 + 1]);
         // After I get the book data, I add it to the adapter
-        adapter.add(book);
+        adapter.add(book);*/
 
 
 

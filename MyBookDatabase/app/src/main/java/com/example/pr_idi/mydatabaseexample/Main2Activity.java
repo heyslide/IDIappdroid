@@ -62,6 +62,7 @@ public class Main2Activity extends AppCompatActivity
         // elements in a ListView
         ArrayAdapter<Book> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, values);
+        adapter.clear();
         list.setAdapter(adapter);
     }
 

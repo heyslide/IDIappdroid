@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 import java.util.Random;
@@ -27,16 +28,6 @@ public class ByAuthor extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
-
-
         EditText nomautor = (EditText) findViewById(R.id.nomautorinsertat);
         final String nomaut = nomautor.toString();
 
@@ -47,19 +38,49 @@ public class ByAuthor extends AppCompatActivity {
 
         final ArrayAdapter<Book> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, values);
+        adapter.clear();
         list.setAdapter(adapter);
-
-
 
         mFindButton = (Button)findViewById(R.id.boto);
         mFindButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ArrayAdapter<Book> adapter = (ArrayAdapter<Book>) list.getAdapter();
+                boolean trobat = false;
+                int index = 1;
 
-                book = bookData.createBook(MySQLiteHelper.COLUMN_TITLE, nomaut);
-                adapter.add(book);
-                adapter.notifyDataSetChanged();
+                String[] newBook = new String[] {
+                        "Miguel Strogoff",
+                        "Jules Verne",
+                        "Ulysses",
+                        "James Joyce",
+                        "Don Quijote",
+                        "Miguel de Cervantes",
+                        "Metamorphosis",
+                        "Kafka"
+                };
+
+
+                while(!trobat && index < newBook.length) {
+                    if (nomaut.equals(newBook[index])) {
+                        trobat = true;
+                    }
+                    else {
+                        index += 2;
+                    }
+                }
+
+                if (trobat) {
+                    // save the new book to the database
+                    book = bookData.createBook(newBook[index-1], newBook[index]);
+                    // After I get the book data, I add it to the adapter
+                    adapter.add(book);
+                }
+
+                else {
+                    Toast.makeText(ByAuthor.this, "Author doesn't exist", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 

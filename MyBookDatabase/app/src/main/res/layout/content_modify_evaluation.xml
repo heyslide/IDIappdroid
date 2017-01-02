@@ -72,7 +72,7 @@
         </LinearLayout>
 
 
-        <!-- <Button android:id="@+id/evboton"
+        <Button android:id="@+id/evboton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
@@ -84,13 +84,13 @@
                   android:textSize="14dp"
                   android:textColor="#FF99CC00"
                   android:text="The Evaluation must be one of this options:\n                  - Molt Bo\n                  - Bo\n                  - Regular\n                  - Dolent\n                  - Molt Dolent\n"
-        /> -->
+        />
 
-        <ListView
+        <!-- <ListView
             android:id="@+id/list_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-        />
+        /> -->
 
 
 

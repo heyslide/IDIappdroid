@@ -110,8 +110,13 @@ public class BookData {
 
         List<Book> books = new ArrayList<>();
 
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS,
-                allColumns, null, null, COLUMN_AUTHOR, Author, null);
+        /*Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS,
+                allColumns, null, null, null, null, MySQLiteHelper.COLUMN_AUTHOR);*/
+
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS, null,
+                MySQLiteHelper.COLUMN_AUTHOR + "= '" + Author+"'", null, null, null, null);
+
+
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
