@@ -79,6 +79,9 @@ public class Book {
     // method or by adding the methods required
     @Override
     public String toString() {
-        return String.format("%s - %s", title, author);
+
+        return String.format("%s\nAuthor: %s\nCategory: %s\nYear: %d     Personal Evaluation: %s ", title, author, category, year, personal_evaluation);
+
+
     }
 }

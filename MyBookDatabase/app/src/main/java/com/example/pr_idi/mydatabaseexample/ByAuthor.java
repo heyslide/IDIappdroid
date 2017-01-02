@@ -57,7 +57,7 @@ public class ByAuthor extends AppCompatActivity {
             public void onClick(View v) {
                 ArrayAdapter<Book> adapter = (ArrayAdapter<Book>) list.getAdapter();
 
-                book = bookData.createBook(nomaut, nomaut);
+                book = bookData.createBook(MySQLiteHelper.COLUMN_TITLE, nomaut);
                 adapter.add(book);
                 adapter.notifyDataSetChanged();
             }

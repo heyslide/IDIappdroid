@@ -30,6 +30,11 @@
             android:label="@string/title_activity_by_author"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".ModifyEvaluation"
+            android:label="@string/title_activity_modify_evaluation"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

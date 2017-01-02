@@ -145,7 +145,8 @@ public class Main2Activity extends AppCompatActivity
         } else if (id == R.id.nav_categoria) {
 
         } else if (id == R.id.nav_valoracio) {
-
+            Intent i = new Intent(this, ModifyEvaluation.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
