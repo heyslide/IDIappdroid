@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class ByAuthor extends AppCompatActivity {
     private BookData bookData;
     private Button mFindButton;
     private Book book;
+    private static final String TAG = "ByAuthor";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +30,13 @@ public class ByAuthor extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        EditText nomautor = (EditText) findViewById(R.id.nomautorinsertat);
-        final String nomaut = nomautor.toString();
+        final String nomautor = ((EditText)findViewById(R.id.nomautorinsertat)).getText().toString();
+
+        Toast.makeText(ByAuthor.this, nomautor, Toast.LENGTH_SHORT).show();
 
         bookData = new BookData(this);
         bookData.open();
-        final List<Book> values = bookData.getBooksAuthor(nomaut);
+        final List<Book> values = bookData.getBooksAuthor(nomautor);
         final ListView list = (ListView) findViewById(R.id.list_autor);
 
         final ArrayAdapter<Book> adapter = new ArrayAdapter<>(this,
@@ -47,7 +50,7 @@ public class ByAuthor extends AppCompatActivity {
             public void onClick(View v) {
                 ArrayAdapter<Book> adapter = (ArrayAdapter<Book>) list.getAdapter();
                 boolean trobat = false;
-                int index = 1;
+                int index = 0;
 
                 String[] newBook = new String[] {
                         "Miguel Strogoff",
@@ -62,13 +65,15 @@ public class ByAuthor extends AppCompatActivity {
 
 
                 while(!trobat && index < newBook.length) {
-                    if (nomaut.equals(newBook[index])) {
+                    if (nomautor.equals(newBook[index])) {
                         trobat = true;
                     }
                     else {
-                        index += 2;
+                        ++index;
                     }
                 }
+
+                Toast.makeText(ByAuthor.this, nomautor, Toast.LENGTH_SHORT).show();
 
                 if (trobat) {
                     // save the new book to the database
