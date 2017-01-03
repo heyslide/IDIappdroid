@@ -32,12 +32,6 @@ public class ByAuthor extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        final String [] prova = new String[] {
-                "hola",
-                "hola2",
-                "funciona porfa"
-        };
-
         mFindButton = (Button)findViewById(R.id.boto);
         mFindButton.setOnClickListener(new View.OnClickListener() {
             @Override
