@@ -48,7 +48,7 @@ public class Main2Activity extends AppCompatActivity
         bookData = new BookData(this);
         bookData.open();
 
-        String[] newBook = new String[] {
+        /*String[] newBook = new String[] {
                 "Miguel Strogoff",
                 "Jules Verne",
                 "Ulysses",
@@ -66,7 +66,7 @@ public class Main2Activity extends AppCompatActivity
             book = bookData.createBook(newBook[i], newBook[i + 1], "", 0, "", "");
             i += 2;
             ++entra;
-        }
+        }*/
 
         List<Book> values = bookData.getAllBooks();
         ListView list = (ListView) findViewById(R.id.list_item);

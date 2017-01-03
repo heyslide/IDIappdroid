@@ -84,10 +84,10 @@
             android:entries="@array/categories_array"/>
 
         <TextView
-            android:text="Puntuation"
+            android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView8" />
+            android:text= "Puntuation" />
 
         <Spinner
             android:layout_width="match_parent"
@@ -96,15 +96,13 @@
             android:entries="@array/ratings_array"/>
 
         <Button
+            android:id="@+id/addBookToDB"
             android:text="Add book"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/addBookToDB"
             android:layout_marginBottom="74dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:elevation="0dp"
-            android:onClick="onClick (AddBooks)" />
+            android:elevation="0dp"/>
+            <!-- android:onClick="onClick (AddBooks)" />-->
 
     </LinearLayout>
 
