@@ -39,11 +39,13 @@ public class Main2Activity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        MainFragment fragment = new MainFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragments, fragment).commit();
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        MainFragment fragment = new MainFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragments, fragment).commit();
+        getSupportActionBar().setTitle("Books Titles DataBase");
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -106,35 +108,38 @@ public class Main2Activity extends AppCompatActivity
 
         } else if (id == R.id.nav_autor) {
 
-            /*Intent i = new Intent(this, ByAuthor.class);
-            startActivity(i);*/
-
             fragment = new SearchAuthor();
             FragmentTransition = true;
+            getSupportActionBar().setTitle("By Author");
 
         } else if (id == R.id.nav_titol) {
 
-            // VA A LA PANTALLA DE CERCA PER TITOL
+            fragment = new SearchTitle();
+            FragmentTransition = true;
+            getSupportActionBar().setTitle("By Title");
 
         } else if (id == R.id.help) {
 
-           // VA A LA PANTALLA DE HELP
+            fragment = new FragmentHelp();
+            FragmentTransition = true;
+            getSupportActionBar().setTitle("Help");
 
         } else if (id == R.id.about) {
 
-           // VA A LA PANTALLA DEL ABOUT
+           fragment = new FragmentAbout();
+            FragmentTransition = true;
+            getSupportActionBar().setTitle("About");
 
        } else if (id == R.id.nav_principal) {
             MainFragment fragment2 = new MainFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.fragments, fragment2).commit();
-            getSupportActionBar().setTitle("Book DataBase");
+            getSupportActionBar().setTitle("Books Titles DataBase");
 
         }
 
         if (FragmentTransition) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragments, fragment).commit();
             item.setChecked(true);
-            getSupportActionBar().setTitle(item.getTitle());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
