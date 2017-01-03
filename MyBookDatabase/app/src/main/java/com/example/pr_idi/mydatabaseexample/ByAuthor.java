@@ -46,17 +46,17 @@ public class ByAuthor extends AppCompatActivity {
                 bookData = new BookData(ByAuthor.this);
                 bookData.open();
                 final String nomautor = ((EditText)findViewById(R.id.nomautorinsertat)).getText().toString();
-                final List<Book> values = bookData.getBooksAuthor(nomautor);
+                //DESCOMENTAR //final List<Book> values = bookData.getBooksAuthor(nomautor);
                 mlist = (ListView) findViewById(R.id.list_autor);
                 // Llenar la lista con los valores de values, el adapter sirve para decir tienes
                 // que mostrar estas cosas(Autor, titulo, etc..)
 
-                ArrayAdapter<Book> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, values);
+                /*DESCOMENTAR /*ArrayAdapter<Book> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, values);
                 mlist.setAdapter(adapter);
 
                 if (adapter.isEmpty()){
                     Toast.makeText(ByAuthor.this, "The Author "+ nomautor + " is not at the DataBase", Toast.LENGTH_SHORT).show();
-                }
+                }*/
             }
         });
     }

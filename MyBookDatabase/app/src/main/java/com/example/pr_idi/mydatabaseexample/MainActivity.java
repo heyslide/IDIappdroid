@@ -43,7 +43,7 @@ public class MainActivity extends ListActivity {
                 String[] newBook = new String[] { "Miguel Strogoff", "Jules Verne", "Ulysses", "James Joyce", "Don Quijote", "Miguel de Cervantes", "Metamorphosis", "Kafka" };
                 int nextInt = new Random().nextInt(4);
                 // save the new book to the database
-                book = bookData.createBook(newBook[nextInt*2], newBook[nextInt*2 + 1]);
+                book = bookData.createBook(newBook[nextInt*2], newBook[nextInt*2 + 1], "", 0, "", "");
 
                 // After I get the book data, I add it to the adapter
                 adapter.add(book);

@@ -63,7 +63,7 @@ public class Main2Activity extends AppCompatActivity
         int entra = 0;
 
         while (entra < 4) {
-            book = bookData.createBook(newBook[i], newBook[i + 1]);
+            book = bookData.createBook(newBook[i], newBook[i + 1], "", 0, "", "");
             i += 2;
             ++entra;
         }
@@ -133,11 +133,13 @@ public class Main2Activity extends AppCompatActivity
             };
             int nextInt = new Random().nextInt(4);
             // save the new book to the database
-            book = bookData.createBook(newBook[nextInt*2], newBook[nextInt*2 + 1]);
+            book = bookData.createBook(newBook[nextInt*2], newBook[nextInt*2 + 1], "", 0, "", "");
             // After I get the book data, I add it to the adapter
             adapter.add(book);
 
         } else if (id == R.id.nav_registrar) {
+            Intent i = new Intent (this, AddBooks.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_esborrarprimer) {
             if (list.getAdapter().getCount() > 0) {
