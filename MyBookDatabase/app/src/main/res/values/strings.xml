@@ -17,6 +17,25 @@
 
     <string name="action_settings">Settings</string>
 
+    <string-array name="ratings_array">
+        <item>Very bad</item>
+        <item>Bad</item>
+        <item>Fair</item>
+        <item>Good</item>
+        <item>Very good</item>
+    </string-array>
+
+    <string-array name="categories_array">
+        <item>Fantasy</item>
+        <item>Sci-fi</item>
+        <item>Mystery/Thriller</item>
+        <item>Action</item>
+        <item>Non-fiction</item>
+        <item>Humor</item>
+        <item>Historical</item>
+        <item>Realistic</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_by_author">By Author</string>
