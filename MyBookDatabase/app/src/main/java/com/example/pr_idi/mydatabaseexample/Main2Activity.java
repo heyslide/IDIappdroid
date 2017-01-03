@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -28,12 +31,14 @@ public class Main2Activity extends AppCompatActivity
 
     private BookData bookData;
     private Book book;
+    Toolbar toolbar = null;
+    NavigationView navigationView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -42,37 +47,15 @@ public class Main2Activity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         bookData = new BookData(this);
         bookData.open();
 
-        /*String[] newBook = new String[] {
-                "Miguel Strogoff",
-                "Jules Verne",
-                "Ulysses",
-                "James Joyce",
-                "Don Quijote",
-                "Miguel de Cervantes",
-                "Metamorphosis",
-                "Kafka"
-        };
-
-        int i = 0;
-        int entra = 0;
-
-        while (entra < 4) {
-            book = bookData.createBook(newBook[i], newBook[i + 1], "", 0, "", "");
-            i += 2;
-            ++entra;
-        }*/
-
         List<Book> values = bookData.getAllBooks();
         ListView list = (ListView) findViewById(R.id.list_item);
 
-        // use the SimpleCursorAdapter to show the
-        // elements in a ListView
         ArrayAdapter<Book> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, values);
         list.setAdapter(adapter);
     }
@@ -114,53 +97,52 @@ public class Main2Activity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        ListView list = (ListView) findViewById(R.id.list_item);
 
-        ArrayAdapter<Book> adapter = (ArrayAdapter<Book>) list.getAdapter();
+        Fragment fragment = null;
+        boolean FragmentTransition = false;
 
-        if (id == R.id.nav_afegir) {
-            // Handle the camera action
 
-            String[] newBook = new String[] {
-                    "Miguel Strogoff",
-                    "Jules Verne",
-                    "Ulysses",
-                    "James Joyce",
-                    "Don Quijote",
-                    "Miguel de Cervantes",
-                    "Metamorphosis",
-                    "Kafka"
-            };
-            int nextInt = new Random().nextInt(4);
-            // save the new book to the database
-            book = bookData.createBook(newBook[nextInt*2], newBook[nextInt*2 + 1], "", 0, "", "");
-            // After I get the book data, I add it to the adapter
-            adapter.add(book);
+        if (id == R.id.nav_registrar) {
 
-        } else if (id == R.id.nav_registrar) {
             Intent i = new Intent (this, AddBooks.class);
             startActivity(i);
 
-        } else if (id == R.id.nav_esborrarprimer) {
-            if (list.getAdapter().getCount() > 0) {
-                book = (Book) list.getAdapter().getItem(0);
-                bookData.deleteBook(book);
-                adapter.remove(book);
-            }
+        }  else if (id == R.id.nav_recycle) {
+
+           // VA A LA PANTALLA DEL RECYCLE VIEW
 
         } else if (id == R.id.nav_autor) {
 
             Intent i = new Intent(this, ByAuthor.class);
             startActivity(i);
 
+            /*SearchAuthor fragment = new SearchAuthor();
+            android.support.v4.app.FragmentTransaction fragmentTransition = getSupportFragmentManager().beginTransaction();
+            fragmentTransition.replace(R.id.content_main2, fragment);
+            fragmentTransition.commit();*/
+
+            fragment = new SearchAuthor();
+            FragmentTransition = true;
+
         } else if (id == R.id.nav_titol) {
 
-        } else if (id == R.id.nav_categoria) {
+            // VA A LA PANTALLA DE CERCA PER TITOL
 
-        } else if (id == R.id.nav_valoracio) {
-            Intent i = new Intent(this, ModifyEvaluation.class);
-            startActivity(i);
-        }
+        } else if (id == R.id.help) {
+
+           // VA A LA PANTALLA DE HELP
+
+        } else if (id == R.id.about) {
+
+           // VA A LA PANTALLA DEL ABOUT
+
+       }
+
+        /*if (FragmentTransition) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_main2, fragment).commit();
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+        }*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

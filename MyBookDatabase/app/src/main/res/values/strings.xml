@@ -12,8 +12,9 @@
     <string name="Cerca">Find</string>
     <string name="Autor">By Author</string>
     <string name="Titol">By Title</string>
-    <string name="Categoria">By Category</string>
+    <string name="All">View all the Book Data</string>
     <string name="Valoracio">Modify personal valoration</string>
+    <string name="app_info">Aplication Information</string>
 
     <string name="action_settings">Settings</string>
 

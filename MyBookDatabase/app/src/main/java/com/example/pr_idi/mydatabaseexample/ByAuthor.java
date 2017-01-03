@@ -45,6 +45,9 @@ public class ByAuthor extends AppCompatActivity {
                 // Llenar la lista con los valores de values, el adapter sirve para decir tienes
                 // que mostrar estas cosas(Autor, titulo, etc..)
 
+                /*AdapterIDI adapterIDI = new AdapterIDI(getApplicationContext(), values);
+                mlist.setAdapter(adapterIDI);*/
+
                 ArrayAdapter<Book> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, values);
                 mlist.setAdapter(adapter);
 

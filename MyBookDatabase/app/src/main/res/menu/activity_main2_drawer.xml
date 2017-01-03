@@ -3,38 +3,38 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_afegir"
-            android:icon="@drawable/ic_control_point_black_24dp"
-            android:title="@string/Add"/>
-        <item
             android:id="@+id/nav_registrar"
             android:icon="@drawable/ic_add_black_24dp"
             android:title="@string/Registrar"/>
         <item
-            android:id="@+id/nav_esborrarprimer"
-            android:icon="@drawable/ic_delete_black_24dp"
-            android:title="@string/Delete"/>
-        <item
-            android:id="@+id/nav_valoracio"
-            android:icon="@drawable/ic_mode_edit_black_24dp"
-            android:title="@string/Valoracio"/>
+            android:id="@+id/nav_recycle"
+            android:icon="@drawable/book_open_page_variant"
+            android:title="@string/All"/>
     </group>
 
-    <item android:title="@string/Cerca"
-          android:icon="@drawable/ic_search_black_24dp">
+    <item android:title="@string/Cerca">
         <menu>
             <item
                 android:id="@+id/nav_autor"
-                android:icon="@drawable/ic_search_black_24dp"
+                android:icon="@drawable/account_search"
                 android:title="@string/Autor"/>
             <item
                 android:id="@+id/nav_titol"
                 android:icon="@drawable/ic_search_black_24dp"
                 android:title="@string/Titol"/>
+        </menu>
+    </item>
+
+    <item android:title="@string/app_info">
+        <menu>
             <item
-                android:id="@+id/nav_categoria"
-                android:icon="@drawable/ic_search_black_24dp"
-                android:title="@string/Categoria"/>
+                android:id="@+id/help"
+                android:icon="@drawable/ic_help_outline_black_24dp"
+                android:title="@string/help"/>
+            <item
+                android:id="@+id/about"
+                android:icon="@drawable/ic_add_black_24dp"
+                android:title="@string/about"/>
         </menu>
     </item>
 
