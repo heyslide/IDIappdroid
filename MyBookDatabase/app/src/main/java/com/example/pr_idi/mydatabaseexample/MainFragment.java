@@ -6,6 +6,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.List;
 
 
 /**
@@ -13,19 +17,30 @@ import android.view.ViewGroup;
  */
 public class MainFragment extends Fragment {
 
+    private BookData bookData;
 
     public MainFragment() {
         // Required empty public constructor
     }
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_main, container, false);
 
+        bookData = new BookData(getActivity());
+        bookData.open();
+
+        View v = inflater.inflate(R.layout.fragment_main, container, false);
+
+        ListView list = (ListView) v.findViewById(R.id.list_item);
+
+        List<Book> values = bookData.getAllBooksTitle();
+        ArrayAdapter<Book> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, values);
+        list.setAdapter(adapter);
+
+
+        return v;
     }
 
 }

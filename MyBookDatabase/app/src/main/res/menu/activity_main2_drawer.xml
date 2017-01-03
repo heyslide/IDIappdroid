@@ -3,6 +3,9 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_principal"
+            android:title="Pantalla Principal"/>
+        <item
             android:id="@+id/nav_registrar"
             android:icon="@drawable/ic_add_black_24dp"
             android:title="@string/Registrar"/>

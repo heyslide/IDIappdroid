@@ -124,7 +124,12 @@ public class Main2Activity extends AppCompatActivity
 
            // VA A LA PANTALLA DEL ABOUT
 
-       }
+       } else if (id == R.id.nav_principal) {
+            MainFragment fragment2 = new MainFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragments, fragment2).commit();
+            getSupportActionBar().setTitle("Book DataBase");
+
+        }
 
         if (FragmentTransition) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragments, fragment).commit();

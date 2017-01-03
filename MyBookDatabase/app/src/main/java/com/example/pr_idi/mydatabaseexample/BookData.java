@@ -129,4 +129,21 @@ public class BookData {
 
         return book;
     }
+
+    public List<Book> getAllBooksTitle() {
+        List<Book> books = new ArrayList<>();
+
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS,
+                allColumns, null, null, null, null, MySQLiteHelper.COLUMN_TITLE + " COLLATE NOCASE");
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Book book = cursorToBook(cursor);
+            books.add(book);
+            cursor.moveToNext();
+        }
+        // make sure to close the cursor
+        cursor.close();
+        return books;
+    }
 }

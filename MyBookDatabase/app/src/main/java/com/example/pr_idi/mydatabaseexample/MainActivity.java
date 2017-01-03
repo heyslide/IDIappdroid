@@ -40,7 +40,16 @@ public class MainActivity extends ListActivity {
         Book book;
         switch (view.getId()) {
             case R.id.add:
-                String[] newBook = new String[] { "Miguel Strogoff", "Jules Verne", "Ulysses", "James Joyce", "Don Quijote", "Miguel de Cervantes", "Metamorphosis", "Kafka" };
+                String[] newBook = new String[] {
+                        "Miguel Strogoff",
+                        "Jules Verne",
+                        "Ulysses",
+                        "James Joyce",
+                        "Don Quijote",
+                        "Miguel de Cervantes",
+                        "Metamorphosis",
+                        "Kafka"
+                };
                 int nextInt = new Random().nextInt(4);
                 // save the new book to the database
                 book = bookData.createBook(newBook[nextInt*2], newBook[nextInt*2 + 1], "", 0, "", "");
