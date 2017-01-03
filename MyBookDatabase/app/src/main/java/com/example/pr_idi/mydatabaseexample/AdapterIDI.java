@@ -47,7 +47,7 @@ public class AdapterIDI extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         //convertView = layoutInflater.inflate(R.layout. null);
-        convertView= layoutInflater.inflate(R.layout.content_by_author, null);
+        //convertView= layoutInflater.inflate(R.layout.content_by_author, null);
 
         TextView txt=(TextView)convertView.findViewById(R.id.text);
 

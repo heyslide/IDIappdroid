@@ -99,8 +99,9 @@ public class Main2Activity extends AppCompatActivity
 
         if (id == R.id.nav_registrar) {
 
-            Intent i = new Intent (this, AddBooks.class);
-            startActivity(i);
+            fragment = new FragmentAfegir();
+            FragmentTransition = true;
+            getSupportActionBar().setTitle("Add New Book");
 
         }  else if (id == R.id.nav_recycle) {
 
