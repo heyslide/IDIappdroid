@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -32,6 +33,12 @@ public class AddBooks extends AppCompatActivity {
         super.onPause();
     }
 
+    private boolean isEmpty(EditText field) {
+        if (field.getText().toString().isEmpty()) return true;
+        else return false;
+    }
+
+   // @Override
     public void onClick(View view) {
         //@SuppressWarnings("unchecked");
         Book book;
@@ -44,14 +51,19 @@ public class AddBooks extends AppCompatActivity {
                 Spinner category = (Spinner)findViewById(R.id.spinAddCategory);
                 Spinner rating = (Spinner)findViewById(R.id.spinAddPuntuation);
                 // save the new book to the database
-
-
-                book = bookData.createBook(title.getText().toString(), author.getText().toString(),
-                        publisher.getText().toString(), Integer.parseInt(year.getText().toString()),
-                        category.getSelectedItem().toString(), rating.getSelectedItem().toString());
-
-                //passar dades a carlota o algo?
-
+                System.out.println("Entro aquí!");
+                if (isEmpty(title) || isEmpty(author) || isEmpty(publisher) || isEmpty(year)) {
+                    System.out.println("Holaaa és buit");
+                    Toast toast = Toast.makeText(getApplicationContext(), "All fields are required", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                else {
+                    System.out.println("A posar llibres");
+                    book = bookData.createBook(title.getText().toString(), author.getText().toString(),
+                            publisher.getText().toString(), Integer.parseInt(year.getText().toString()),
+                            category.getSelectedItem().toString(), rating.getSelectedItem().toString());
+                    System.out.println("Llibre posat!");
+                }
                 break;
         }
 

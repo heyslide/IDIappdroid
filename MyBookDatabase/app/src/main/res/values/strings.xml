@@ -20,7 +20,7 @@
     <string-array name="ratings_array">
         <item>Very bad</item>
         <item>Bad</item>
-        <item>So-so</item>
+        <item>Fair</item>
         <item>Good</item>
         <item>Very good</item>
     </string-array>
