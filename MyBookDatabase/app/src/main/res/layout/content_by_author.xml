@@ -24,22 +24,21 @@
 
             <TextView android:id="@+id/nomautor"
                       android:layout_width="wrap_content"
-                      android:layout_height="match_parent"
-                      android:layout_marginTop="13dp"
+                      android:layout_height="wrap_content"
                       android:textSize="16dp"
                       android:textColor="@color/Navy"
                       android:text="AUTHOR NAME:"/>
 
-            <SearchView android:layout_width="match_parent"
+            <!-- <SearchView android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-            </SearchView>
+            </SearchView> -->
 
-            <!-- <EditText android:id="@+id/nomautorinsertat"
+            <EditText android:id="@+id/nomautorinsertat"
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:textColor="@color/Black"
-                      android:textSize="16dp"/> -->
+                      android:textSize="16dp"/>
         </LinearLayout>
 
         <Button android:id="@+id/boto"

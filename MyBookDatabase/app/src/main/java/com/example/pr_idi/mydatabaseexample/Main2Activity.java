@@ -31,33 +31,27 @@ public class Main2Activity extends AppCompatActivity
 
     private BookData bookData;
     private Book book;
-    Toolbar toolbar = null;
-    NavigationView navigationView = null;
+    Toolbar toolbar;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        MainFragment fragment = new MainFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragments, fragment).commit();
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        bookData = new BookData(this);
-        bookData.open();
-
-        List<Book> values = bookData.getAllBooks();
-        ListView list = (ListView) findViewById(R.id.list_item);
-
-        ArrayAdapter<Book> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, values);
-        list.setAdapter(adapter);
     }
 
     @Override
@@ -101,7 +95,6 @@ public class Main2Activity extends AppCompatActivity
         Fragment fragment = null;
         boolean FragmentTransition = false;
 
-
         if (id == R.id.nav_registrar) {
 
             Intent i = new Intent (this, AddBooks.class);
@@ -113,13 +106,8 @@ public class Main2Activity extends AppCompatActivity
 
         } else if (id == R.id.nav_autor) {
 
-            Intent i = new Intent(this, ByAuthor.class);
-            startActivity(i);
-
-            /*SearchAuthor fragment = new SearchAuthor();
-            android.support.v4.app.FragmentTransaction fragmentTransition = getSupportFragmentManager().beginTransaction();
-            fragmentTransition.replace(R.id.content_main2, fragment);
-            fragmentTransition.commit();*/
+            /*Intent i = new Intent(this, ByAuthor.class);
+            startActivity(i);*/
 
             fragment = new SearchAuthor();
             FragmentTransition = true;
@@ -138,11 +126,11 @@ public class Main2Activity extends AppCompatActivity
 
        }
 
-        /*if (FragmentTransition) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_main2, fragment).commit();
+        if (FragmentTransition) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragments, fragment).commit();
             item.setChecked(true);
             getSupportActionBar().setTitle(item.getTitle());
-        }*/
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -150,7 +138,7 @@ public class Main2Activity extends AppCompatActivity
     }
     // Life cycle methods. Check whether it is necessary to reimplement them
 
-    @Override
+    /*@Override
     protected void onResume() {
         bookData.open();
         super.onResume();
@@ -162,5 +150,5 @@ public class Main2Activity extends AppCompatActivity
     protected void onPause() {
         bookData.close();
         super.onPause();
-    }
+    }*/
 }

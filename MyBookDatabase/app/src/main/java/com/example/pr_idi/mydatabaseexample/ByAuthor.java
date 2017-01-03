@@ -48,7 +48,7 @@ public class ByAuthor extends AppCompatActivity {
                 /*AdapterIDI adapterIDI = new AdapterIDI(getApplicationContext(), values);
                 mlist.setAdapter(adapterIDI);*/
 
-                ArrayAdapter<Book> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, values);
+                ArrayAdapter<Book> adapter = new ArrayAdapter<>(ByAuthor.this, android.R.layout.simple_list_item_1, values);
                 mlist.setAdapter(adapter);
 
                 if (adapter.isEmpty()){
