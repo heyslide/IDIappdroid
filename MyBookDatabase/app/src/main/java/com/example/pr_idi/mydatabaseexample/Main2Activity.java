@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -26,6 +27,7 @@ public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private BookData bookData;
+    private Book book;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +35,6 @@ public class Main2Activity extends AppCompatActivity
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -55,14 +48,32 @@ public class Main2Activity extends AppCompatActivity
         bookData = new BookData(this);
         bookData.open();
 
+        String[] newBook = new String[] {
+                "Miguel Strogoff",
+                "Jules Verne",
+                "Ulysses",
+                "James Joyce",
+                "Don Quijote",
+                "Miguel de Cervantes",
+                "Metamorphosis",
+                "Kafka"
+        };
+
+        int i = 0;
+        int entra = 0;
+
+        while (entra < 4) {
+            book = bookData.createBook(newBook[i], newBook[i + 1]);
+            i += 2;
+            ++entra;
+        }
+
         List<Book> values = bookData.getAllBooks();
         ListView list = (ListView) findViewById(R.id.list_item);
 
         // use the SimpleCursorAdapter to show the
         // elements in a ListView
-        ArrayAdapter<Book> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, values);
-        adapter.clear();
+        ArrayAdapter<Book> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, values);
         list.setAdapter(adapter);
     }
 
@@ -106,7 +117,6 @@ public class Main2Activity extends AppCompatActivity
         ListView list = (ListView) findViewById(R.id.list_item);
 
         ArrayAdapter<Book> adapter = (ArrayAdapter<Book>) list.getAdapter();
-        Book book;
 
         if (id == R.id.nav_afegir) {
             // Handle the camera action

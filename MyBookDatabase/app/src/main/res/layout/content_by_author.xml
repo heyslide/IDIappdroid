@@ -26,22 +26,26 @@
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:textSize="16dp"
+                      android:textColor="@color/Navy"
                       android:text="AUTHOR NAME:"/>
 
             <EditText android:id="@+id/nomautorinsertat"
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
+                      android:textColor="@color/Black"
                       android:textSize="16dp"/>
         </LinearLayout>
 
         <Button android:id="@+id/boto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="14dp"
                 android:text="@string/Cerca"/>
 
         <ListView android:id="@+id/list_autor"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent">
+                  android:layout_height="match_parent"
+                  android:textColor="@color/Black">
 
         </ListView>
 

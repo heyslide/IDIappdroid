@@ -52,11 +52,11 @@ public class ByAuthor extends AppCompatActivity {
                 // que mostrar estas cosas(Autor, titulo, etc..)
 
                 ArrayAdapter<Book> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, values);
-                //ArrayAdapter adapter = new ArrayAdapter(ByAuthor.this, android.R.layout.simple_list_item_1, prova);
-                //adapter.clear();
                 mlist.setAdapter(adapter);
 
-                Toast.makeText(ByAuthor.this, nomautor, Toast.LENGTH_SHORT).show();
+                if (adapter.isEmpty()){
+                    Toast.makeText(ByAuthor.this, "The Author "+ nomautor + " is not at the DataBase", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
