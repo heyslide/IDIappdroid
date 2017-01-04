@@ -20,8 +20,10 @@ public class SearchAuthor extends Fragment {
 
     private BookData bookData;
     private Button mFindButton;
-    private ListView mlist;
-    private static final String TAG = "ByAuthor";
+    private List<Book> mBooks;
+    private ListView lvBooks;
+    private AdapterIDI adapter;
+    private EditText mEditText;
 
     public SearchAuthor() {
         // Required empty public constructor
@@ -33,8 +35,10 @@ public class SearchAuthor extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_search_author, container, false);
 
-        final EditText nom_autor = (EditText) v.findViewById(R.id.nomautorinsertat);
-        mlist = (ListView) v.findViewById(R.id.list_autor);
+        lvBooks = (ListView) v.findViewById(R.id.list_books);
+        mEditText = (EditText) v.findViewById(R.id.nomautorinsertat);
+        lvBooks = (ListView) v.findViewById(R.id.list_autor);
+
         mFindButton = (Button) v.findViewById(R.id.boto);
         mFindButton.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -43,20 +47,23 @@ public class SearchAuthor extends Fragment {
                bookData = new BookData(getActivity());
                bookData.open();
 
-               if (nom_autor.getText().toString().isEmpty()) {
+               if (mEditText.getText().toString().isEmpty()) {
                    Toast.makeText(getActivity(), "The field is Requiered", Toast.LENGTH_SHORT).show();
                }
 
                else {
-                   String nomautor = nom_autor.getText().toString();
-                   final List<Book> values = bookData.getBooksAuthor(nomautor);
+                   String nomautor = mEditText.getText().toString();
 
-                   ArrayAdapter<Book> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, values);
-                   mlist.setAdapter(adapter);
+                   mBooks = bookData.getBooksAuthor(nomautor);
+                   adapter = new AdapterIDI(getActivity(), mBooks);
+                   lvBooks.setAdapter(adapter);
 
                    if (adapter.isEmpty()) {
                        Toast.makeText(getActivity(), "The Author " + nomautor + " is not at the DataBase", Toast.LENGTH_SHORT).show();
                    }
+
+
+
                }
            }
         });

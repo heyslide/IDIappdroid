@@ -37,7 +37,7 @@
                 android:title="@string/help"/>
             <item
                 android:id="@+id/about"
-                android:icon="@drawable/ic_add_black_24dp"
+                android:icon="@drawable/exclamation"
                 android:title="@string/about"/>
         </menu>
     </item>

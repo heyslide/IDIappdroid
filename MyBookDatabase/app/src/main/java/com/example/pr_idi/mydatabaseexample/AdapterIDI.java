@@ -16,45 +16,43 @@ import java.util.List;
 
 public class AdapterIDI extends BaseAdapter {
 
-    Context context;
-    LayoutInflater layoutInflater;
+    Context mContext;
     List<Book> mBooks;
 
 
-    public AdapterIDI(Context context, List<Book> books) {
-        super();
-        this.context = context;
-        layoutInflater = LayoutInflater.from(context);
-        this.mBooks = books;
-    }
+    //Constructor
 
+
+    public AdapterIDI(Context context, List<Book> books) {
+        mContext = context;
+        mBooks = books;
+    }
 
     @Override
     public int getCount() {
-        return 0;
+        return mBooks.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return mBooks.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        //convertView = layoutInflater.inflate(R.layout. null);
-        //convertView= layoutInflater.inflate(R.layout.content_by_author, null);
 
-        TextView txt=(TextView)convertView.findViewById(R.id.text);
+        View v = View.inflate(mContext, R.layout.list_view, null);
+        TextView nomll = (TextView) v.findViewById(R.id.nomllibre);
 
+        nomll.setText(mBooks.get(position).getTitle());
 
+        v.setTag(mBooks.get(position).getId());
 
-
-        return convertView;
-        //return null;
+        return v;
     }
 }
