@@ -146,4 +146,38 @@ public class BookData {
         cursor.close();
         return books;
     }
+
+    public List<Book> getAllBooksByTitle (String title) {
+
+        List<Book> books = new ArrayList<>();
+
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS, null,
+                MySQLiteHelper.COLUMN_TITLE + "= '" + title +"'", null, null, null, MySQLiteHelper.COLUMN_AUTHOR + " COLLATE NOCASE");
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Book book = cursorToBook(cursor);
+            books.add(book);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return books;
+    }
+
+    public List<Book> getAllBooksCategory() {
+        List<Book> books = new ArrayList<>();
+
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS,
+                allColumns, null, null, null, null, MySQLiteHelper.COLUMN_CATEGORY + " COLLATE NOCASE");
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Book book = cursorToBook(cursor);
+            books.add(book);
+            cursor.moveToNext();
+        }
+        // make sure to close the cursor
+        cursor.close();
+        return books;
+    }
 }

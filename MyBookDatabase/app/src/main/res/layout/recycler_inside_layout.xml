@@ -2,47 +2,69 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <TextView
-        android:text="Title"
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textRTitle"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:textSize="30sp" />
+        android:layout_height="match_parent"
+        app:contentPadding="16dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="5dp">
 
-    <TextView
-        android:text="Author"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textRAuthor"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        android:textSize="24sp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:text="Year"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textRYear" />
+            <TextView
+                android:text="Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textRTitle"
+                android:textAppearance="@android:style/TextAppearance.Material.Large"
+                android:textSize="30sp"
+                android:layout_weight="1" />
 
-    <TextView
-        android:text="Publisher"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textRPublisher" />
+            <TextView
+                android:text="Author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textRAuthor"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textSize="24sp"
+                android:layout_weight="1" />
 
-    <TextView
-        android:text="Category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textRCategory" />
+            <TextView
+                android:text="Year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textRYear"
+                android:layout_weight="1" />
 
-    <TextView
-        android:text="Personal evaluation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textRRating"
-        android:textColor="@color/DarkBlue" />
+            <TextView
+                android:text="Publisher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textRPublisher"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="Category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textRCategory"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="Personal evaluation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textRRating"
+                android:textColor="@color/DarkBlue"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

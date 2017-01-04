@@ -107,7 +107,7 @@ public class Main2Activity extends AppCompatActivity
 
             fragment = new CategoryView();
             FragmentTransition = true;
-            getSupportActionBar().setTitle("By Category");
+            getSupportActionBar().setTitle("All the Book Data");
 
         } else if (id == R.id.nav_autor) {
 
