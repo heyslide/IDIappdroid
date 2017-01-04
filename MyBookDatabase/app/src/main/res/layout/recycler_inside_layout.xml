@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textRTitle"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:textSize="30sp" />
+
+    <TextView
+        android:text="Author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textRAuthor"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textSize="24sp" />
+
+    <TextView
+        android:text="Year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textRYear" />
+
+    <TextView
+        android:text="Publisher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textRPublisher" />
+
+    <TextView
+        android:text="Category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textRCategory" />
+
+    <TextView
+        android:text="Personal evaluation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textRRating"
+        android:textColor="@color/DarkBlue" />
+
+</LinearLayout>

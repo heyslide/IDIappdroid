@@ -36,20 +36,15 @@ public class AddBooks extends AppCompatActivity {
                 Spinner category = (Spinner)findViewById(R.id.spinAddCategory);
                 Spinner rating = (Spinner)findViewById(R.id.spinAddPuntuation);
 
-                // save the new book to the database
-                System.out.println("Entro aquí!");
-
                 if (isEmpty(title) || isEmpty(author) || isEmpty(publisher) || isEmpty(year)) {
-                    System.out.println("Holaaa és buit");
                     Toast toast = Toast.makeText(getApplicationContext(), "All fields are required", Toast.LENGTH_SHORT);
                     toast.show();
                 }
                 else {
-                    System.out.println("A posar llibres");
                     book = bookData.createBook(title.getText().toString(), author.getText().toString(),
                             publisher.getText().toString(), Integer.parseInt(year.getText().toString()),
                             category.getSelectedItem().toString(), rating.getSelectedItem().toString());
-                    System.out.println("Llibre posat!");
+                    finish();
                 }
             }
         });
@@ -72,34 +67,4 @@ public class AddBooks extends AppCompatActivity {
         else return false;
     }
 
-   // @Override
-    /*public void onClick(View view) {
-        //@SuppressWarnings("unchecked");
-        Book book;
-        switch (view.getId()) {
-            case R.id.addBookToDB:
-                EditText title = (EditText)findViewById(R.id.textAddTitle);
-                EditText author = (EditText)findViewById(R.id.textAddAuthor);
-                EditText publisher = (EditText)findViewById(R.id.textAddPublisher);
-                EditText year = (EditText)findViewById(R.id.textAddYear);
-                Spinner category = (Spinner)findViewById(R.id.spinAddCategory);
-                Spinner rating = (Spinner)findViewById(R.id.spinAddPuntuation);
-                // save the new book to the database
-                System.out.println("Entro aquí!");
-                if (isEmpty(title) || isEmpty(author) || isEmpty(publisher) || isEmpty(year)) {
-                    System.out.println("Holaaa és buit");
-                    Toast toast = Toast.makeText(getApplicationContext(), "All fields are required", Toast.LENGTH_SHORT);
-                    toast.show();
-                }
-                else {
-                    System.out.println("A posar llibres");
-                    book = bookData.createBook(title.getText().toString(), author.getText().toString(),
-                            publisher.getText().toString(), Integer.parseInt(year.getText().toString()),
-                            category.getSelectedItem().toString(), rating.getSelectedItem().toString());
-                    System.out.println("Llibre posat!");
-                }
-                break;
-        }
-
-    }*/
 }

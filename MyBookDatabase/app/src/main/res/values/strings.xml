@@ -27,14 +27,15 @@
     </string-array>
 
     <string-array name="categories_array">
-        <item>Fantasy</item>
-        <item>Sci-fi</item>
-        <item>Mystery/Thriller</item>
         <item>Action</item>
-        <item>Non-fiction</item>
-        <item>Humor</item>
+        <item>Fantasy</item>
         <item>Historical</item>
+        <item>Humor</item>
+        <item>Mystery/Thriller</item>
+        <item>Non-fiction</item>
         <item>Realistic</item>
+        <item>Sci-fi</item>
+        <item>Other</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
