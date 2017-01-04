@@ -8,88 +8,94 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp"
         android:id="@+id/textTitle"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
         <TextView
-            android:text="Title"
+            android:text="@string/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
             android:textSize="16dp"
+            android:textColor="@color/Navy"
             android:id="@+id/textView2" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
+            android:layout_marginBottom="12dp"
             android:ems="10"
             android:textSize="16dp"
             android:id="@+id/textAddTitle" />
 
         <TextView
-            android:text="Author"
+            android:text="@string/autor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16dp"
-            android:layout_marginBottom="5dp"
+            android:textColor="@color/Navy"
             android:id="@+id/textView3" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
+            android:layout_marginBottom="12dp"
             android:textSize="16dp"
             android:ems="10"
             android:id="@+id/textAddAuthor" />
 
         <TextView
-            android:text="Year"
+            android:text="@string/any"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
             android:textSize="16dp"
+            android:textColor="@color/Navy"
             android:id="@+id/textView4" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="12dp"
             android:inputType="number"
             android:textSize="16dp"
             android:ems="10"
             android:id="@+id/textAddYear" />
 
         <TextView
-            android:text="Publisher"
+            android:text="@string/publicador"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
             android:textSize="16dp"
+            android:textColor="@color/Navy"
             android:id="@+id/textView5" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="12dp"
             android:inputType="textPersonName"
             android:textSize="16dp"
             android:ems="10"
             android:id="@+id/textAddPublisher" />
 
         <TextView
-            android:text="Category"
+            android:text="@string/genere"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:textSize="16dp"
+            android:textColor="@color/Navy"
             android:id="@+id/textView6" />
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="12dp"
             android:id="@+id/spinAddCategory"
             android:textSize="16dp"
             android:entries="@array/categories_array"/>
@@ -100,13 +106,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:textSize="16dp"
-            android:text= "Puntuation" />
+            android:textColor="@color/Navy"
+            android:text= "@string/evaluacio" />
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/spinAddPuntuation"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="12dp"
             android:textSize="16dp"
             android:entries="@array/ratings_array"/>
 

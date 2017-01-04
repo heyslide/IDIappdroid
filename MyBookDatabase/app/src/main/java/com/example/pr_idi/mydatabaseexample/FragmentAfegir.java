@@ -35,9 +35,6 @@ public class FragmentAfegir extends Fragment {
         bookData = new BookData(getActivity());
         bookData.open();
 
-        bookData = new BookData(getActivity());
-        bookData.open();
-
         final EditText title = (EditText) v.findViewById(R.id.textAddTitle);
         final EditText author = (EditText) v.findViewById(R.id.textAddAuthor);
         final EditText publisher = (EditText) v.findViewById(R.id.textAddPublisher);
@@ -58,12 +55,16 @@ public class FragmentAfegir extends Fragment {
                 String valoracio = rating.getSelectedItem().toString();
 
                 if (titol.isEmpty() || autor.isEmpty() || publicador.isEmpty() || any.isEmpty()) {
-                    Toast toast = Toast.makeText(getActivity(), "All fields are required", Toast.LENGTH_SHORT);
-                    toast.show();
+                    Toast.makeText(getActivity(), "All fields are required", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Integer anyint = Integer.parseInt(any);
                     book = bookData.createBook(titol, autor, publicador, anyint, categoria, valoracio);
+                    Toast.makeText(getActivity(), "Book Added Correctly", Toast.LENGTH_SHORT).show();
+                    title.setText("");
+                    author.setText("");
+                    publisher.setText("");
+                    year.setText("");
                 }
             }
         });

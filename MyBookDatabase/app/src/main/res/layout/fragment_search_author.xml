@@ -8,6 +8,9 @@
 
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
+                  android:paddingTop="10dp"
+                  android:paddingLeft="15dp"
+                  android:paddingRight="15dp"
                   android:orientation="vertical">
 
         <LinearLayout android:layout_width="match_parent"
@@ -19,7 +22,7 @@
                       android:layout_height="wrap_content"
                       android:textSize="16dp"
                       android:textColor="@color/Navy"
-                      android:text="AUTHOR NAME:"/>
+                      android:text="Author Name:"/>
 
             <EditText android:id="@+id/nomautorinsertat"
                       android:layout_width="match_parent"
