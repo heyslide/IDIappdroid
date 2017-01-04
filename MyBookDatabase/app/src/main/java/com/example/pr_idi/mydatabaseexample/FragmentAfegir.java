@@ -3,6 +3,7 @@ package com.example.pr_idi.mydatabaseexample;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,39 +35,49 @@ public class FragmentAfegir extends Fragment {
         bookData = new BookData(getActivity());
         bookData.open();
 
-        mButton = (Button) v.findViewById(R.id.addBookToDB);
+        bookData = new BookData(getActivity());
+        bookData.open();
+
+        final EditText title = (EditText) v.findViewById(R.id.textAddTitle);
+        final EditText author = (EditText) v.findViewById(R.id.textAddAuthor);
+        final EditText publisher = (EditText) v.findViewById(R.id.textAddPublisher);
+        final EditText year = (EditText) v.findViewById(R.id.textAddYear);
+        final Spinner category = (Spinner) v.findViewById(R.id.spinAddCategory);
+        final Spinner rating = (Spinner) v.findViewById(R.id.spinAddPuntuation);
+
+        mButton = (Button)v.findViewById(R.id.addBookToDB);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText title = (EditText)v.findViewById(R.id.textAddTitle);
-                EditText author = (EditText)v.findViewById(R.id.textAddAuthor);
-                EditText publisher = (EditText)v.findViewById(R.id.textAddPublisher);
-                EditText year = (EditText)v.findViewById(R.id.textAddYear);
-                Spinner category = (Spinner)v.findViewById(R.id.spinAddCategory);
-                Spinner rating = (Spinner)v.findViewById(R.id.spinAddPuntuation);
 
-                // save the new book to the database
 
-                if (isEmpty(title) || isEmpty(author) || isEmpty(publisher) || isEmpty(year)) {
+
+                String titol = title.getText().toString();
+                Log.d("Hola", titol);
+                String autor = author.getText().toString();
+                Log.d("Hola", autor);
+                String publicador = publisher.getText().toString();
+                Log.d("Hola", publicador);
+//                Integer any = Integer.parseInt(year.getText().toString());
+ //               Log.d("Hola", "aqui surt l'any");
+                String categoria = category.getSelectedItem().toString();
+                Log.d("Hola", categoria);
+                String valoracio = rating.getSelectedItem().toString();
+                Log.d("Hola", valoracio);
+
+
+                if (titol.isEmpty() || autor.isEmpty() || publicador.isEmpty() /*|| any.isEmpty()*/) {
                     Toast toast = Toast.makeText(getActivity(), "All fields are required", Toast.LENGTH_SHORT);
                     toast.show();
                 }
-                else {
-                    book = bookData.createBook(title.getText().toString(), author.getText().toString(),
-                            publisher.getText().toString(), Integer.parseInt(year.getText().toString()),
-                            category.getSelectedItem().toString(), rating.getSelectedItem().toString());
+                else{
+                    book = bookData.createBook(titol, autor, publicador, 2005, categoria, valoracio);
                 }
             }
         });
 
         return v;
     }
-
-    private boolean isEmpty(EditText field) {
-        if (field.getText().toString().isEmpty()) return true;
-        else return false;
-    }
-
 }
 
 
