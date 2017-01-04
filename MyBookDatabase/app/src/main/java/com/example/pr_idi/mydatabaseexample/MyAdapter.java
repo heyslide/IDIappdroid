@@ -1,5 +1,6 @@
 package com.example.pr_idi.mydatabaseexample;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,28 +16,30 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Book> books;
+    private Context context;
 
-    public MyAdapter(List<Book> values) {
+    public MyAdapter(Context contextact, List<Book> values) {
         super();
-        Log.d("hola", "creating MyAdapter");
-        books = values;
+        this.context = contextact;
+        this.books = values;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Log.d("hola", "onCreateViewHolder MyAdapter");
+
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_inside_layout, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Log.d("hola","onBindViewHolder MyAdapter");
-        final Book book = books.get(position);
+        Book book = books.get(position);
+        Integer any = book.getYear();
         holder.title.setText(book.getTitle());
         holder.author.setText(book.getAuthor());
-        holder.year.setText(book.getYear());
+        holder.year.setText(any.toString());
         holder.publisher.setText(book.getPublisher());
+        holder.category.setText(book.getCategory());
         holder.rating.setText(book.getPersonal_evaluation());
 
     }
@@ -56,7 +59,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
-            Log.d("hola","creating ViewHolder MyAdapter");
             title = (TextView) itemView.findViewById(R.id.textRTitle);
             author = (TextView) itemView.findViewById(R.id.textRAuthor);
             year = (TextView) itemView.findViewById(R.id.textRYear);

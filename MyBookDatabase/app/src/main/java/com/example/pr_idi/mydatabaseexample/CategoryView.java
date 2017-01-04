@@ -3,6 +3,7 @@ package com.example.pr_idi.mydatabaseexample;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -37,18 +38,18 @@ public class CategoryView extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_category_view, container, false);
-
         bookdata = new BookData(getActivity());
         bookdata.open();
+
+        View v = inflater.inflate(R.layout.fragment_category_view, container, false);
+
         recycler = (RecyclerView) v.findViewById(R.id.recycler_view);
 
         List<Book> values = bookdata.getAllBooks();
-        myadapter = new MyAdapter(values);
-
+        myadapter = new MyAdapter(getActivity(), values);
         recycler.setAdapter(myadapter);
+        layoutmanager = new LinearLayoutManager(getActivity());
         recycler.setLayoutManager(layoutmanager);
-        Log.d("hola", "adapter and manager set");
 
         return v;
     }
