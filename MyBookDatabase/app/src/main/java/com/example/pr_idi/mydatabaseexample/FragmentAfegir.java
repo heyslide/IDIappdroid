@@ -50,6 +50,11 @@ public class FragmentAfegir extends Fragment {
             @Override
             public void onClick(View v) {
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8315b070659b8db92f0e83b498fbc350560b02d4
                 String titol = title.getText().toString();
                 String autor = author.getText().toString();
                 String publicador = publisher.getText().toString();

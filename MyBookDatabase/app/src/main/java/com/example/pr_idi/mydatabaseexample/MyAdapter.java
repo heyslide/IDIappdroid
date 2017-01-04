@@ -1,16 +1,12 @@
-package layout;
+package com.example.pr_idi.mydatabaseexample;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.pr_idi.mydatabaseexample.Book;
-import com.example.pr_idi.mydatabaseexample.BookData;
-import com.example.pr_idi.mydatabaseexample.R;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,17 +18,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public MyAdapter(List<Book> values) {
         super();
+        Log.d("hola", "creating MyAdapter");
         books = values;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Log.d("hola", "onCreateViewHolder MyAdapter");
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_inside_layout, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        Log.d("hola","onBindViewHolder MyAdapter");
         final Book book = books.get(position);
         holder.title.setText(book.getTitle());
         holder.author.setText(book.getAuthor());
@@ -57,7 +56,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
-
+            Log.d("hola","creating ViewHolder MyAdapter");
             title = (TextView) itemView.findViewById(R.id.textRTitle);
             author = (TextView) itemView.findViewById(R.id.textRAuthor);
             year = (TextView) itemView.findViewById(R.id.textRYear);
