@@ -11,7 +11,6 @@ import android.widget.ListView;
 
 import java.util.List;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -38,6 +37,8 @@ public class MainFragment extends Fragment {
         List<Book> values = bookData.getAllBooksTitle();
         ArrayAdapter<Book> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, values);
         list.setAdapter(adapter);
+
+        
 
 
         return v;
