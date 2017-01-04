@@ -50,27 +50,20 @@ public class FragmentAfegir extends Fragment {
             @Override
             public void onClick(View v) {
 
-
                 String titol = title.getText().toString();
-                Log.d("Hola", titol);
                 String autor = author.getText().toString();
-                Log.d("Hola", autor);
                 String publicador = publisher.getText().toString();
-                Log.d("Hola", publicador);
-//                Integer any = Integer.parseInt(year.getText().toString());
- //               Log.d("Hola", "aqui surt l'any");
+                String any = year.getText().toString();
                 String categoria = category.getSelectedItem().toString();
-                Log.d("Hola", categoria);
                 String valoracio = rating.getSelectedItem().toString();
-                Log.d("Hola", valoracio);
 
-
-                if (titol.isEmpty() || autor.isEmpty() || publicador.isEmpty() /*|| any.isEmpty()*/) {
+                if (titol.isEmpty() || autor.isEmpty() || publicador.isEmpty() || any.isEmpty()) {
                     Toast toast = Toast.makeText(getActivity(), "All fields are required", Toast.LENGTH_SHORT);
                     toast.show();
                 }
                 else{
-                    book = bookData.createBook(titol, autor, publicador, 2005, categoria, valoracio);
+                    Integer anyint = Integer.parseInt(any);
+                    book = bookData.createBook(titol, autor, publicador, anyint, categoria, valoracio);
                 }
             }
         });

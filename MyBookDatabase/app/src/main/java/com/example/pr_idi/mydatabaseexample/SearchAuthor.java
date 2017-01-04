@@ -27,7 +27,6 @@ public class SearchAuthor extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,7 +34,7 @@ public class SearchAuthor extends Fragment {
         View v = inflater.inflate(R.layout.fragment_search_author, container, false);
 
         final EditText nom_autor = (EditText) v.findViewById(R.id.nomautorinsertat);
-
+        mlist = (ListView) v.findViewById(R.id.list_autor);
         mFindButton = (Button) v.findViewById(R.id.boto);
         mFindButton.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -51,7 +50,6 @@ public class SearchAuthor extends Fragment {
                else {
                    String nomautor = nom_autor.getText().toString();
                    final List<Book> values = bookData.getBooksAuthor(nomautor);
-                   mlist = (ListView) v.findViewById(R.id.list_autor);
 
                    ArrayAdapter<Book> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, values);
                    mlist.setAdapter(adapter);

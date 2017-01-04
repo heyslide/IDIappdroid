@@ -105,7 +105,7 @@ public class BookData {
         List<Book> books = new ArrayList<>();
 
         Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS, null,
-                MySQLiteHelper.COLUMN_AUTHOR + "= '" + Author+"'", null, null, null, null);
+                MySQLiteHelper.COLUMN_AUTHOR + "= '" + Author+"'", null, null, null, MySQLiteHelper.COLUMN_TITLE + " COLLATE NOCASE");
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
