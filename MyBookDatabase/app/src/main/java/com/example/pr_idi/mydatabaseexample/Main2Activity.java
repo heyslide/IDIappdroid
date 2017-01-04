@@ -105,7 +105,9 @@ public class Main2Activity extends AppCompatActivity
 
         }  else if (id == R.id.nav_recycle) {
 
-           // VA A LA PANTALLA DEL RECYCLE VIEW
+            fragment = new CategoryView();
+            FragmentTransition = true;
+            getSupportActionBar().setTitle("By Category");
 
         } else if (id == R.id.nav_autor) {
 

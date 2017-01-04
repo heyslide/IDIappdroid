@@ -46,19 +46,15 @@ public class FragmentAfegir extends Fragment {
                 Spinner rating = (Spinner)v.findViewById(R.id.spinAddPuntuation);
 
                 // save the new book to the database
-                System.out.println("Entro aquí!");
 
                 if (isEmpty(title) || isEmpty(author) || isEmpty(publisher) || isEmpty(year)) {
-                    System.out.println("Holaaa és buit");
                     Toast toast = Toast.makeText(getActivity(), "All fields are required", Toast.LENGTH_SHORT);
                     toast.show();
                 }
                 else {
-                    System.out.println("A posar llibres");
                     book = bookData.createBook(title.getText().toString(), author.getText().toString(),
                             publisher.getText().toString(), Integer.parseInt(year.getText().toString()),
                             category.getSelectedItem().toString(), rating.getSelectedItem().toString());
-                    System.out.println("Llibre posat!");
                 }
             }
         });
