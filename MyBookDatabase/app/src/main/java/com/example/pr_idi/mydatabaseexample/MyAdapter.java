@@ -1,6 +1,7 @@
 package com.example.pr_idi.mydatabaseexample;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -37,10 +38,28 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         Integer any = book.getYear();
         holder.title.setText(book.getTitle());
         holder.author.setText(book.getAuthor());
-        holder.year.setText(any.toString());
-        holder.publisher.setText(book.getPublisher());
+        holder.year.setText(any.toString() + ", " + book.getPublisher());
+        //holder.publisher.setText(book.getPublisher());
         holder.category.setText(book.getCategory());
         holder.rating.setText(book.getPersonal_evaluation());
+        switch(holder.rating.getText().toString()) {
+            case "Very bad":
+                holder.rating.setTextColor(Color.parseColor("#9e0303"));
+                break;
+            case "Bad":
+                holder.rating.setTextColor(Color.parseColor("#db8300"));
+                break;
+            case "Fair":
+                holder.rating.setTextColor(Color.parseColor("#acce04"));
+                break;
+            case "Good":
+                holder.rating.setTextColor(Color.parseColor("#26b705"));
+                break;
+            case "Very good":
+                holder.rating.setTextColor(Color.parseColor("#136301"));
+                break;
+        }
+
 
     }
 
@@ -53,7 +72,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         TextView title;
         TextView author;
         TextView year;
-        TextView publisher;
+        //TextView publisher;
         TextView category;
         TextView rating;
 
@@ -62,10 +81,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             title = (TextView) itemView.findViewById(R.id.textRTitle);
             author = (TextView) itemView.findViewById(R.id.textRAuthor);
             year = (TextView) itemView.findViewById(R.id.textRYear);
-            publisher = (TextView) itemView.findViewById(R.id.textRPublisher);
+            //publisher = (TextView) itemView.findViewById(R.id.textRPublisher);
             category = (TextView) itemView.findViewById(R.id.textRCategory);
             rating = (TextView) itemView.findViewById(R.id.textRRating);
+
+
         }
     }
-
 }
