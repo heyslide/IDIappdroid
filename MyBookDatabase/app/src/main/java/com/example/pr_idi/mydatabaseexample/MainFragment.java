@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -30,8 +32,8 @@ public class MainFragment extends Fragment {
     private List<Book> mBooks;
     private ListView lvBooks;
     private AdapterIDI adapter;
-    private PopupWindow popUpWindow;
-    private FrameLayout positionOfPopUp;
+    //private PopupWindow popUpWindow;
+    //private FrameLayout positionOfPopUp;
 
 
     public MainFragment() {
@@ -52,13 +54,42 @@ public class MainFragment extends Fragment {
         adapter = new AdapterIDI(getActivity(), mBooks);
         lvBooks.setAdapter(adapter);
 
-        positionOfPopUp = (FrameLayout) v.findViewById(R.id.popUp_position);
+        //positionOfPopUp = (FrameLayout) v.findViewById(R.id.popUp_position);
 
         lvBooks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
 
-               /* View costumView = inflater.inflate(R.layout.popupwindowlayout,null);
+                Toast.makeText(getActivity(), "PARA1", Toast.LENGTH_SHORT).show();
+                View spiner = view.findViewById(R.id.estrellas);
+                if(spiner.getVisibility() == View.GONE) {
+                    //adapter.expandir();
+                    spiner.setVisibility(View.VISIBLE);
+                    Toast.makeText(getActivity(), "PARA2", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    //adapter.desexpandir();
+                    spiner.setVisibility(View.GONE);
+                    Toast.makeText(getActivity(), "PARA3", Toast.LENGTH_SHORT).show();
+                }
+                //adapter.notifyDataSetChanged();
+            }
+        });
+
+        return v;
+    }
+
+    /*class ItemList implements AdapterView.OnItemClickListener(
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+
+        }
+    });*/
+
+
+}
+
+/*/* View costumView = inflater.inflate(R.layout.popupwindowlayout,null);
                 popUpWindow = new PopupWindow(
                         costumView,
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
@@ -83,16 +114,6 @@ public class MainFragment extends Fragment {
 
                 popUpWindow.showAtLocation(positionOfPopUp, Gravity.CENTER,0,0);*/
 
-
-
-
-
-                Toast.makeText(getActivity(), "book seleccionado" + id, Toast.LENGTH_SHORT).show();
+//Toast.makeText(getActivity(), "book seleccionado" + id, Toast.LENGTH_SHORT).show();
                 /*popUpWindow.showAtLocation(getView(), Gravity.BOTTOM, 10, 10);
                 popUpWindow.update(50, 50, 320, 90);*/
-            }
-        });
-
-        return v;
-    }
-}

@@ -100,6 +100,7 @@ The first visible screen when you open the app is the Quick View screen: here, y
                                   android:layout_width="wrap_content"
                                   android:layout_height="wrap_content" />
                     </LinearLayout>
+
                 </FrameLayout>
             </LinearLayout>
         </TabHost>
