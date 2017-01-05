@@ -35,6 +35,8 @@ public class CategoryView extends Fragment {
     public CategoryView() {
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
