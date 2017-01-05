@@ -14,18 +14,22 @@
             android:id="@+id/nav_recycle"
             android:icon="@drawable/book_open_page_variant"
             android:title="@string/All"/>
+
+        <item
+            android:id="@+id/nav_autor"
+            android:icon="@drawable/account_search"
+            android:title="@string/Autor"/>
+
+
     </group>
 
     <item android:title="@string/Cerca">
         <menu>
-            <item
-                android:id="@+id/nav_autor"
-                android:icon="@drawable/account_search"
-                android:title="@string/Autor"/>
-            <item
+
+            <!-- <item
                 android:id="@+id/nav_titol"
                 android:icon="@drawable/ic_search_black_24dp"
-                android:title="@string/Titol"/>
+                android:title="@string/Titol"/> -->
         </menu>
     </item>
 

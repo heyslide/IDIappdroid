@@ -8,7 +8,7 @@
     <string name="help">Help</string>
     <string name="Registrar">Add New Book</string>
     <string name="Cerca">Find</string>
-    <string name="Autor">By Author</string>
+    <string name="Autor">Find By Author</string>
     <string name="Titol">By Title</string>
     <string name="All">View all the Book Data</string>
     <string name="Valoracio">Modify personal valoration</string>

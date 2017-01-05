@@ -1,6 +1,7 @@
 package com.example.pr_idi.mydatabaseexample;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,8 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -27,6 +31,7 @@ public class MainFragment extends Fragment {
     private ListView lvBooks;
     private AdapterIDI adapter;
     private PopupWindow popUpWindow;
+    private FrameLayout positionOfPopUp;
 
 
     public MainFragment() {
@@ -34,7 +39,7 @@ public class MainFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_main, container, false);
 
@@ -47,9 +52,41 @@ public class MainFragment extends Fragment {
         adapter = new AdapterIDI(getActivity(), mBooks);
         lvBooks.setAdapter(adapter);
 
+        positionOfPopUp = (FrameLayout) v.findViewById(R.id.popUp_position);
+
         lvBooks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+
+               /* View costumView = inflater.inflate(R.layout.popupwindowlayout,null);
+                popUpWindow = new PopupWindow(
+                        costumView,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT
+                );
+
+                ImageButton canviar = (ImageButton) costumView.findViewById(R.id.okey);
+                canviar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+
+                ImageButton nocanviar = (ImageButton) costumView.findViewById(R.id.cancelar);
+                nocanviar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popUpWindow.dismiss();
+                    }
+                });
+
+                popUpWindow.showAtLocation(positionOfPopUp, Gravity.CENTER,0,0);*/
+
+
+
+
+
                 Toast.makeText(getActivity(), "book seleccionado" + id, Toast.LENGTH_SHORT).show();
                 /*popUpWindow.showAtLocation(getView(), Gravity.BOTTOM, 10, 10);
                 popUpWindow.update(50, 50, 320, 90);*/

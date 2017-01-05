@@ -96,47 +96,44 @@ public class Main2Activity extends AppCompatActivity
         Fragment fragment = null;
         boolean FragmentTransition = false;
 
-        if (id == R.id.nav_registrar) {
+        switch (item.getItemId()) {
 
-            fragment = new FragmentAfegir();
-            FragmentTransition = true;
-            getSupportActionBar().setTitle("Add New Book");
+            case R.id.nav_principal:
 
-        }  else if (id == R.id.nav_recycle) {
+                fragment = new MainFragment();
+                FragmentTransition = true;
+                getSupportActionBar().setTitle("Book Titles DataBase");
+                break;
 
-            fragment = new CategoryView();
-            FragmentTransition = true;
-            getSupportActionBar().setTitle("By Category");
+            case R.id.nav_registrar:
+                fragment = new FragmentAfegir();
+                FragmentTransition = true;
+                getSupportActionBar().setTitle("Add New Book");
+                break;
 
-        } else if (id == R.id.nav_autor) {
+            case R.id.nav_recycle:
+                fragment = new CategoryView();
+                FragmentTransition = true;
+                getSupportActionBar().setTitle("By Category");
+                break;
 
-            fragment = new SearchAuthor();
-            FragmentTransition = true;
-            getSupportActionBar().setTitle("By Author");
+            case R.id.nav_autor:
+                fragment = new SearchAuthor();
+                FragmentTransition = true;
+                getSupportActionBar().setTitle("By Author");
+                break;
 
-        } else if (id == R.id.nav_titol) {
+            case R.id.help:
+                fragment = new FragmentHelp();
+                FragmentTransition = true;
+                getSupportActionBar().setTitle("Help");
+                break;
 
-            fragment = new SearchTitle();
-            FragmentTransition = true;
-            getSupportActionBar().setTitle("By Title");
-
-        } else if (id == R.id.help) {
-
-            fragment = new FragmentHelp();
-            FragmentTransition = true;
-            getSupportActionBar().setTitle("Help");
-
-        } else if (id == R.id.about) {
-
-           fragment = new FragmentAbout();
-            FragmentTransition = true;
-            getSupportActionBar().setTitle("About");
-
-       } else if (id == R.id.nav_principal) {
-            MainFragment fragment2 = new MainFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragments, fragment2).commit();
-            getSupportActionBar().setTitle("Books Titles DataBase");
-
+            case R.id.about:
+                fragment = new FragmentAbout();
+                FragmentTransition = true;
+                getSupportActionBar().setTitle("About");
+                break;
         }
 
         if (FragmentTransition) {
@@ -148,6 +145,8 @@ public class Main2Activity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
     // Life cycle methods. Check whether it is necessary to reimplement them
 
     /*@Override

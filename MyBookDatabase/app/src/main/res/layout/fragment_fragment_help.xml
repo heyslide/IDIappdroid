@@ -4,38 +4,105 @@
              android:layout_height="match_parent"
              tools:context="com.example.pr_idi.mydatabaseexample.FragmentHelp">
 
-    <!-- TODO: Update blank fragment layout -->
+    <android.support.v4.view.ViewPager
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:orientation="vertical"
-                  android:paddingLeft="15dp"
-                  android:paddingRight="15dp"
-                  android:paddingTop="10dp">
+        <TabHost android:id="@android:id/tabhost"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:textSize="16dp"
-            android:text="This app will help you manage your book collection. The first visible screen when you open the app is the Quick View screen: here, you'll see all your books, ordered by the title. To open the menu, touch the menu icon in the upper-left corner or slide your finger from the left side of the screen."/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
 
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content">
+                <TabWidget android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:id="@android:id/tabs" />
 
-            <ImageView android:layout_width="77dp"
-                       android:layout_height="117dp"
-                       android:src="@drawable/principal"
-                       android:layout_weight="0.25"/>
+                <FrameLayout android:layout_width="match_parent"
+                             android:layout_height="match_parent"
+                             android:id="@android:id/tabcontent" >
 
-            <TextView android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text=""
-            />
+                    <LinearLayout android:id="@+id/tab1"
+                                  android:orientation="vertical"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="match_parent" >
 
-        </LinearLayout>
+                        <TextView android:id="@+id/textView1"
+                                  android:text="This app will help you manage your book collection.
+The first visible screen when you open the app is the Quick View screen: here, you'll see all your books, ordered by the title. To open the menu, touch the menu icon in the upper-left corner or slide your finger from the left side of the screen."
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:layout_marginTop="30dp"
+                                  android:layout_marginBottom="10dp"
+                                  android:layout_marginLeft="15dp"
+                                  android:layout_marginRight="15dp"/>
 
-    </LinearLayout>
+                        <!-- POSAR LOGO?? -->
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/tab2"
+                                  android:orientation="vertical"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="match_parent" >
+
+                        <TextView android:id="@+id/textView2"
+                                  android:text="EXPLICACIO PANTALLA PRINCIPAL"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:layout_marginTop="30dp"
+                                  android:layout_marginBottom="10dp"
+                                  android:layout_marginLeft="15dp"
+                                  android:layout_marginRight="15dp" />
+
+                        <ImageView android:layout_width="166dp"
+                                   android:layout_height="272dp"
+                                   android:layout_marginLeft="40dp"
+                                   android:layout_marginRight="15dp"
+                                   android:src="@drawable/principal"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/tab3"
+                                  android:orientation="vertical"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="match_parent" >
+
+                        <TextView android:id="@+id/textView3"
+                                  android:text="EXPLICACIO AFEGIR"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/tab4"
+                                  android:orientation="vertical"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="match_parent" >
+
+                        <TextView android:id="@+id/textView4"
+                                  android:text="EXPLICACIO RECYCLER"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/tab5"
+                                  android:orientation="vertical"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="match_parent" >
+
+                        <TextView android:id="@+id/textView5"
+                                  android:text="EXPLICACIÓ FIND BY AUTHOR"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
 
 
 </FrameLayout>
