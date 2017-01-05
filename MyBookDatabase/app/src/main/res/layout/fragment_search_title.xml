@@ -4,40 +4,41 @@
              android:layout_height="match_parent"
              tools:context="com.example.pr_idi.mydatabaseexample.SearchTitle">
 
+    <!-- TODO: Update blank fragment layout -->
     <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:paddingTop="10dp"
-                  android:paddingLeft="15dp"
-                  android:paddingRight="15dp"
-                  android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="vertical">
 
         <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="match_parent"
-                      android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-            <TextView android:id="@+id/nomtitol"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:textSize="16dp"
-                      android:textColor="@color/Navy"
-                      android:text="Book Title:"/>
+            <TextView android:id="@+id/titolllibre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textColor="@color/Navy"
+                android:text="Title:"/>
 
-            <EditText android:id="@+id/nomtitolinsertat"
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:textColor="@color/Black"
-                      android:textSize="16dp"/>
-        </LinearLayout>
-
-        <Button android:id="@+id/boto"
+            <EditText android:id="@+id/textCercaTitol"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14dp"
-                android:text="@string/Cerca"/>
+                android:textColor="@color/Black"
+                android:textSize="16dp"/>
+        </LinearLayout>
 
-        <ListView android:id="@+id/list_titols"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent">
+        <Button android:id="@+id/botocerca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:text="@string/Cerca"/>
+
+        <ListView android:id="@+id/list_titol"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         </ListView>
 
