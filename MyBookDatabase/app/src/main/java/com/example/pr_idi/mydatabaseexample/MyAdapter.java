@@ -19,16 +19,20 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Book> books;
     private Context context;
+    private RecyclerViewClickListener listener;
 
-    public MyAdapter(Context contextact, List<Book> values) {
+    public MyAdapter(Context contextact, List<Book> values, RecyclerViewClickListener listener) {
         super();
         this.context = contextact;
         this.books = values;
+        this.listener = listener;
     }
 
     public Object getItem(int position) {
         return books.get(position);
     }
+
+    public void deleteItem(int position) { books.remove(position);}
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -75,7 +79,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         //pffffffffFFFFFFFFFF
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView title;
         TextView author;
         TextView year;
@@ -93,6 +97,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             category = (TextView) itemView.findViewById(R.id.textRCategory);
             rating = (TextView) itemView.findViewById(R.id.textRRating);
             delete = (ImageView) itemView.findViewById(R.id.ivDeleteBook);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null)
+                        listener.onRowClicked(getAdapterPosition());
+                }
+            });
+
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null)
+                        listener.onViewClicked(v, getAdapterPosition());
+                }
+             });
+
 
 
         }
