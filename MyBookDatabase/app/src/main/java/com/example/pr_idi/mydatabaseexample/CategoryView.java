@@ -98,7 +98,7 @@ public class CategoryView extends Fragment implements RecyclerViewClickListener{
 
     @Override
     public void onRowClicked(int position) {
-        
+
     }
 
     @Override

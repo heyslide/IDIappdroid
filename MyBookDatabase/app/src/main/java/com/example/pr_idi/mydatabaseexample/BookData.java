@@ -180,4 +180,20 @@ public class BookData {
         cursor.close();
         return books;
     }
+
+    public List<Book> getAllAuthors() {
+        List<Book> books = new ArrayList<>();
+
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS, null,
+                MySQLiteHelper.COLUMN_AUTHOR, null, null, null, MySQLiteHelper.COLUMN_AUTHOR + " COLLATE NOCASE");
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Book book = cursorToBook(cursor);
+            books.add(book);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return books;
+    }
 }

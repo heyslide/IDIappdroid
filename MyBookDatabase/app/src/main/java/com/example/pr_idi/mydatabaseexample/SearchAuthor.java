@@ -23,7 +23,9 @@ public class SearchAuthor extends Fragment {
     private List<Book> mBooks;
     private ListView lvBooks;
     private AdapterIDI adapter;
+    private AdapterAutors autors;
     private EditText mEditText;
+    private Button mallauthors;
 
     public SearchAuthor() {
         // Required empty public constructor
@@ -39,34 +41,47 @@ public class SearchAuthor extends Fragment {
         mEditText = (EditText) v.findViewById(R.id.nomautorinsertat);
         lvBooks = (ListView) v.findViewById(R.id.list_autor);
 
+        bookData = new BookData(getActivity());
+        bookData.open();
+
         mFindButton = (Button) v.findViewById(R.id.boto);
         mFindButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
 
-               bookData = new BookData(getActivity());
-               bookData.open();
 
-               if (mEditText.getText().toString().isEmpty()) {
-                   Toast.makeText(getActivity(), "The field is Requiered", Toast.LENGTH_SHORT).show();
-               }
+           if (mEditText.getText().toString().isEmpty()) {
+               Toast.makeText(getActivity(), "The field is Requiered", Toast.LENGTH_SHORT).show();
+           }
 
-               else {
-                   String nomautor = mEditText.getText().toString();
+           else {
+               String nomautor = mEditText.getText().toString();
 
-                   mBooks = bookData.getBooksAuthor(nomautor);
-                   adapter = new AdapterIDI(getActivity(), mBooks);
-                   lvBooks.setAdapter(adapter);
+               mBooks = bookData.getBooksAuthor(nomautor);
+               adapter = new AdapterIDI(getActivity(), mBooks);
+               lvBooks.setAdapter(adapter);
 
-                   if (adapter.isEmpty()) {
-                       Toast.makeText(getActivity(), "The Author " + nomautor + " is not at the DataBase", Toast.LENGTH_SHORT).show();
-                   }
-
-
-
+               if (adapter.isEmpty()) {
+                   Toast.makeText(getActivity(), "The Author " + nomautor + " is not at the DataBase", Toast.LENGTH_SHORT).show();
                }
            }
+           }
         });
+
+        mallauthors = (Button) v.findViewById(R.id.allauthors);
+        mallauthors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mBooks = bookData.getAllAuthors();
+                autors = new AdapterAutors(getActivity(), mBooks);
+                lvBooks.setAdapter(autors);
+
+                Toast.makeText(getActivity(), "CHOSE ONE OF THIS AUTHORS", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
 
         return v;
 

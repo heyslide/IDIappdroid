@@ -12,10 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -32,6 +34,7 @@ public class MainFragment extends Fragment {
     private List<Book> mBooks;
     private ListView lvBooks;
     private AdapterIDI adapter;
+    //private RatingBar mRatingBar;
     //private PopupWindow popUpWindow;
     //private FrameLayout positionOfPopUp;
 
@@ -53,6 +56,7 @@ public class MainFragment extends Fragment {
         mBooks = bookData.getAllBooksTitle();
         adapter = new AdapterIDI(getActivity(), mBooks);
         lvBooks.setAdapter(adapter);
+        final boolean visiblitat = false;
 
         //positionOfPopUp = (FrameLayout) v.findViewById(R.id.popUp_position);
 
@@ -61,15 +65,19 @@ public class MainFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
 
                 Toast.makeText(getActivity(), "PARA1", Toast.LENGTH_SHORT).show();
-                View spiner = view.findViewById(R.id.estrellas);
-                if(spiner.getVisibility() == View.GONE) {
+                View rating = view.findViewById(R.id.estrellas);
+                View boto = view.findViewById(R.id.modifybutton);
+                if(!visiblitat) {
                     //adapter.expandir();
-                    spiner.setVisibility(View.VISIBLE);
+                    rating.setVisibility(View.VISIBLE);
+                    boto.setVisibility(View.VISIBLE);
                     Toast.makeText(getActivity(), "PARA2", Toast.LENGTH_SHORT).show();
+
                 }
                 else {
                     //adapter.desexpandir();
-                    spiner.setVisibility(View.GONE);
+                    rating.setVisibility(View.GONE);
+                    boto.setVisibility(View.GONE);
                     Toast.makeText(getActivity(), "PARA3", Toast.LENGTH_SHORT).show();
                 }
                 //adapter.notifyDataSetChanged();
@@ -80,7 +88,7 @@ public class MainFragment extends Fragment {
     }
 
     //class ListView implements AdapterView.OnItemClickListener()
-
+//positionOfPopUp = (FrameLayout) v.findViewById(R.id.popUp_position);
     /*class ItemList implements AdapterView.OnItemClickListener(
         @Override
         public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
