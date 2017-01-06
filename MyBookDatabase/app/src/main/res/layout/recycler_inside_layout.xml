@@ -82,7 +82,7 @@
                     <ImageView
                         android:src="@drawable/ic_delete_black_24dp"
                         android:background="?attr/selectableItemBackgroundBorderless"
-                        android:id="@+id/imageView"
+                        android:id="@+id/ivDeleteBook"
                         android:layout_weight="1"
                         android:layout_gravity="center_vertical"
                         android:clickable="true"

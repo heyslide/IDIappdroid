@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -25,6 +26,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         this.books = values;
     }
 
+    public Object getItem(int position) {
+        return books.get(position);
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -33,7 +38,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         Book book = books.get(position);
         Integer any = book.getYear();
         holder.title.setText(book.getTitle());
@@ -59,13 +64,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 holder.rating.setTextColor(Color.parseColor("#136301"));
                 break;
         }
-
-
     }
 
     @Override
     public int getItemCount() {
         return books.size();
+    }
+
+    public void filterByTitle(String newText) {
+        //pffffffffFFFFFFFFFF
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -75,6 +82,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         //TextView publisher;
         TextView category;
         TextView rating;
+        ImageView delete;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -84,6 +92,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             //publisher = (TextView) itemView.findViewById(R.id.textRPublisher);
             category = (TextView) itemView.findViewById(R.id.textRCategory);
             rating = (TextView) itemView.findViewById(R.id.textRRating);
+            delete = (ImageView) itemView.findViewById(R.id.ivDeleteBook);
 
 
         }

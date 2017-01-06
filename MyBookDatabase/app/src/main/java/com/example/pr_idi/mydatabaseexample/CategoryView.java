@@ -6,10 +6,15 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import java.util.List;
 
@@ -55,7 +60,39 @@ public class CategoryView extends Fragment {
         recycler.setLayoutManager(layoutmanager);
         recycler.setItemAnimator(new DefaultItemAnimator());
 
+        ImageView ivDelete = (ImageView) v.findViewById(R.id.ivDeleteBook);
+        ivDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+
+        });
+
+        setHasOptionsMenu(true);
+
         return v;
     }
 
+    @Override
+    public void onCreateOptionsMenu(
+            Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_search_title, menu);
+
+        MenuItem item = menu.findItem(R.id.menuSearchTitle);
+        SearchView searchView = (SearchView) item.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                myadapter.filterByTitle(newText);
+                return false;
+            }
+        });
+    }
 }
