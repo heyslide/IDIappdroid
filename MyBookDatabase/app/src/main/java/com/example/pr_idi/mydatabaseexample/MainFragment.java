@@ -79,6 +79,8 @@ public class MainFragment extends Fragment {
         return v;
     }
 
+    //class ListView implements AdapterView.OnItemClickListener()
+
     /*class ItemList implements AdapterView.OnItemClickListener(
         @Override
         public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {

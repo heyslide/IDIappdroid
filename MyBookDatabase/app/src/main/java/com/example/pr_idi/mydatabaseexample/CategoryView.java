@@ -15,13 +15,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CategoryView extends Fragment {
+public class CategoryView extends Fragment implements RecyclerViewClickListener{
     /* recyclerview -> dos layouts
         -uno con la recyclerview
         -otro que define como es cada elemento
@@ -39,8 +40,6 @@ public class CategoryView extends Fragment {
 
     public CategoryView() {
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,13 +59,14 @@ public class CategoryView extends Fragment {
         recycler.setLayoutManager(layoutmanager);
         recycler.setItemAnimator(new DefaultItemAnimator());
 
-        ImageView ivDelete = (ImageView) v.findViewById(R.id.ivDeleteBook);
+        View v2 = inflater.inflate(R.layout.recycler_inside_layout, container, false);
+
+        ImageView ivDelete = (ImageView) v2.findViewById(R.id.ivDeleteBook);
         ivDelete.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View v3) {
+                Toast.makeText(getActivity(), "sdjf", Toast.LENGTH_SHORT).show();
             }
-
         });
 
         setHasOptionsMenu(true);
@@ -80,7 +80,7 @@ public class CategoryView extends Fragment {
         inflater.inflate(R.menu.menu_search_title, menu);
 
         MenuItem item = menu.findItem(R.id.menuSearchTitle);
-        SearchView searchView = (SearchView) item.getActionView();
+/*        SearchView searchView = (SearchView) item.getActionView();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -93,6 +93,16 @@ public class CategoryView extends Fragment {
                 myadapter.filterByTitle(newText);
                 return false;
             }
-        });
+        });*/
+    }
+
+    @Override
+    public void onRowClicked(int position) {
+        
+    }
+
+    @Override
+    public void onViewClicked(View v, int position) {
+
     }
 }
