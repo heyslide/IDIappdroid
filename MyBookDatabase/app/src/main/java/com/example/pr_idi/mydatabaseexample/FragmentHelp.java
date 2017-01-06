@@ -29,8 +29,6 @@ public class FragmentHelp extends Fragment {
 
         Resources res = getResources();
 
-
-
         TabHost tabs=(TabHost)v.findViewById(android.R.id.tabhost);
         tabs.setup();
 
@@ -39,7 +37,7 @@ public class FragmentHelp extends Fragment {
         spec.setIndicator("", res.getDrawable(R.drawable.information_variant));
         tabs.addTab(spec);
 
-        spec = tabs.newTabSpec("mitab2");
+        spec=tabs.newTabSpec("mitab2");
         spec.setContent(R.id.tab2);
         spec.setIndicator("", res.getDrawable(R.drawable.home));
         tabs.addTab(spec);
@@ -66,31 +64,3 @@ public class FragmentHelp extends Fragment {
     }
 
 }
-
-/*
-*  TabLayout tabLayout = (TabLayout) findViewById(R.id.tabanim_tabs);
-        tabLayout.setupWithViewPager(viewPager);
-
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-
-                viewPager.setCurrentItem(tab.getPosition());
-
-                switch (tab.getPosition()) {
-                    case 0:
-                        showToast("One");
-                        break;
-                    case 1:
-                        showToast("Two");
-
-                        break;
-                    case 2:
-                        showToast("Three");
-
-                        break;
-                }
-            }
-
-*
-* */

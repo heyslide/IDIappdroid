@@ -26,11 +26,8 @@ import android.widget.TextView;
 import java.util.List;
 import java.util.Random;
 
-public class Main2Activity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class Main2Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private BookData bookData;
-    private Book book;
     Toolbar toolbar;
     NavigationView navigationView;
 
@@ -65,13 +62,6 @@ public class Main2Activity extends AppCompatActivity
         }
     }
 
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main2, menu);
-        return true;
-    }
-*/
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -114,7 +104,7 @@ public class Main2Activity extends AppCompatActivity
             case R.id.nav_recycle:
                 fragment = new CategoryView();
                 FragmentTransition = true;
-                getSupportActionBar().setTitle("By Category");
+                getSupportActionBar().setTitle("All Book Data");
                 break;
 
             case R.id.nav_autor:
@@ -145,21 +135,4 @@ public class Main2Activity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
-    // Life cycle methods. Check whether it is necessary to reimplement them
-
-    /*@Override
-    protected void onResume() {
-        bookData.open();
-        super.onResume();
-    }
-
-    // Life cycle methods. Check whether it is necessary to reimplement them
-
-    @Override
-    protected void onPause() {
-        bookData.close();
-        super.onPause();
-    }*/
 }
