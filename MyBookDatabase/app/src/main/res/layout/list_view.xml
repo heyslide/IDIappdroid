@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
+              xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"
+              android:layout_height="match_parent"
               android:paddingLeft="10dp"
               android:paddingRight="10dp"
               android:paddingTop="5dp"
@@ -12,52 +11,60 @@
               android:background="@color/White"
               android:animateLayoutChanges="true">
 
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="10dp"
+              android:layout_marginTop="10dp"
+              android:id="@+id/nomllibre"
+              android:textSize="16dp"
+              android:textColor="@color/Black"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:visibility="gone"
+                  android:id="@+id/layoutdesplegable2"
+                  android:weightSum="1"
+                  android:layout_marginTop="10dp"
+                  android:layout_marginBottom="10dp">
+
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:layout_marginBottom="10dp"
-                  android:layout_marginTop="10dp"
-                  android:id="@+id/nomllibre"
                   android:textSize="16dp"
+                  android:text="VALORACIO ACTUAL:"
                   android:textColor="@color/Black"/>
 
-
-    <!-- <Spinner android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:id="@+id/numvaloracio"
-             android:textSize="16dp"
-             android:entries="@array/ratings_array"
-             android:visibility="gone"
-             android:focusable="false">
-    </Spinner>-->
-
-    <LinearLayout android:layout_width="wrap_content"
+        <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:orientation="horizontal"
-                  android:id="@+id/layoutinvisible"
-                  android:weightSum="1"> -->
-
-        <RatingBar android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:numStars="5"
-                   android:stepSize="1.0"
-                   android:id="@+id/estrellas"
-                   android:maxHeight="45dp"
-                   android:minHeight="45dp"
-                   android:maxWidth="45dp"
-                   android:minWidth="45dp"
-                   android:scaleX="0.5"
-                   android:scaleY="0.5"
-                   android:visibility="gone"/>
-        <!-- android:visibility="gone"/>-->
-
-        <Button android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/modifybutton"
-                android:layout_marginLeft="25dp"
-                android:visibility="gone"
-                android:text="Apply"/>
+                  android:id="@+id/valoracio"
+                  android:layout_marginLeft="15dp"
+                  android:textColor="@color/Black"
+                  android:textSize="16dp"/>
 
     </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:visibility="gone"
+                  android:id="@+id/layoutdesplegable"
+                  android:weightSum="1">
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:id="@+id/modificaciodepuntuacio"
+            android:layout_marginBottom="12dp"
+            android:textSize="16dp"
+            android:entries="@array/ratings_array" android:layout_weight="0.91"/>
+
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/modificacioboto"
+                android:layout_marginLeft="10dp"
+                android:text="MODIFY"/>
+
+    </LinearLayout>
+
+
 
 
 

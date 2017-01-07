@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import java.util.List;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */

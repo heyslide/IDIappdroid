@@ -69,7 +69,7 @@ public class CategoryView extends Fragment implements RecyclerViewClickListener{
         ivDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v3) {
-                Toast.makeText(getActivity(), "sdjf", Toast.LENGTH_SHORT).show();
+
             }
         });
 

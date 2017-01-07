@@ -1,28 +1,19 @@
 package com.example.pr_idi.mydatabaseexample;
 
-
-import android.content.Context;
-import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.PopupWindow;
-import android.widget.RatingBar;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,9 +25,8 @@ public class MainFragment extends Fragment {
     private List<Book> mBooks;
     private ListView lvBooks;
     private AdapterIDI adapter;
-    //private RatingBar mRatingBar;
-    //private PopupWindow popUpWindow;
-    //private FrameLayout positionOfPopUp;
+    private LinearLayout mLinearLayout;
+    boolean obert = false;
 
 
     public MainFragment() {
@@ -56,74 +46,75 @@ public class MainFragment extends Fragment {
         mBooks = bookData.getAllBooksTitle();
         adapter = new AdapterIDI(getActivity(), mBooks);
         lvBooks.setAdapter(adapter);
-        final boolean visiblitat = false;
-
-        //positionOfPopUp = (FrameLayout) v.findViewById(R.id.popUp_position);
 
         lvBooks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
 
-                Toast.makeText(getActivity(), "PARA1", Toast.LENGTH_SHORT).show();
-                View rating = view.findViewById(R.id.estrellas);
-                View boto = view.findViewById(R.id.modifybutton);
-                if(!visiblitat) {
-                    //adapter.expandir();
-                    rating.setVisibility(View.VISIBLE);
-                    boto.setVisibility(View.VISIBLE);
-                    Toast.makeText(getActivity(), "PARA2", Toast.LENGTH_SHORT).show();
+                if (!obert) {
+                    final View Layout = view.findViewById(R.id.layoutdesplegable);
+                    final View Layout2 = view.findViewById(R.id.layoutdesplegable2);
+                    Layout.setVisibility(View.VISIBLE);
+                    Layout2.setVisibility(View.VISIBLE);
+                    obert = true;
 
+                    final TextView nomllibre = (TextView) view.findViewById(R.id.nomllibre);
+                    nomllibre.setTextColor(Color.parseColor("#0000FF"));
+
+                    TextView valoracio = (TextView) view.findViewById(R.id.valoracio);
+
+                    final Book book = adapter.llibre(position);
+
+                    valoracio.setText(book.getPersonal_evaluation());
+
+                    switch(book.getPersonal_evaluation()) {
+                        case "Very bad":
+                            valoracio.setTextColor(Color.parseColor("#9e0303"));
+                            break;
+                        case "Bad":
+                            valoracio.setTextColor(Color.parseColor("#db8300"));
+                            break;
+                        case "Fair":
+                            valoracio.setTextColor(Color.parseColor("#acce04"));
+                            break;
+                        case "Good":
+                            valoracio.setTextColor(Color.parseColor("#26b705"));
+                            break;
+                        case "Very good":
+                            valoracio.setTextColor(Color.parseColor("#136301"));
+                            break;
+                    }
+
+
+                    if (book.getPersonal_evaluation() == "Very Good") {
+                        valoracio.setTextColor(Color.parseColor("#136301"));
+                    }
+
+
+                    final Spinner spinner = (Spinner) view.findViewById(R.id.modificaciodepuntuacio);
+
+                    Button modificacio = (Button) view.findViewById(R.id.modificacioboto);
+                    modificacio.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            book.setPersonal_evaluation(spinner.getSelectedItem().toString());
+
+                            Layout.setVisibility(View.GONE);
+                            Layout2.setVisibility(View.GONE);
+                            nomllibre.setTextColor(Color.parseColor("#000000"));
+                            obert = false;
+                        }
+                    });
                 }
+
                 else {
-                    //adapter.desexpandir();
-                    rating.setVisibility(View.GONE);
-                    boto.setVisibility(View.GONE);
-                    Toast.makeText(getActivity(), "PARA3", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "First you have to modify or leave the same valuation to the selected book", Toast.LENGTH_LONG).show();
                 }
-                //adapter.notifyDataSetChanged();
             }
+
         });
 
         return v;
     }
-
-    //class ListView implements AdapterView.OnItemClickListener()
-//positionOfPopUp = (FrameLayout) v.findViewById(R.id.popUp_position);
-    /*class ItemList implements AdapterView.OnItemClickListener(
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-
-        }
-    });*/
-
-
 }
-
-/*/* View costumView = inflater.inflate(R.layout.popupwindowlayout,null);
-                popUpWindow = new PopupWindow(
-                        costumView,
-                        RelativeLayout.LayoutParams.WRAP_CONTENT,
-                        RelativeLayout.LayoutParams.WRAP_CONTENT
-                );
-
-                ImageButton canviar = (ImageButton) costumView.findViewById(R.id.okey);
-                canviar.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                });
-
-                ImageButton nocanviar = (ImageButton) costumView.findViewById(R.id.cancelar);
-                nocanviar.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        popUpWindow.dismiss();
-                    }
-                });
-
-                popUpWindow.showAtLocation(positionOfPopUp, Gravity.CENTER,0,0);*/
-
-//Toast.makeText(getActivity(), "book seleccionado" + id, Toast.LENGTH_SHORT).show();
-                /*popUpWindow.showAtLocation(getView(), Gravity.BOTTOM, 10, 10);
-                popUpWindow.update(50, 50, 320, 90);*/

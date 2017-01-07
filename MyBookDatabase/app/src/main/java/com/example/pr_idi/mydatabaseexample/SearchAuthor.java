@@ -1,10 +1,12 @@
 package com.example.pr_idi.mydatabaseexample;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,7 +39,6 @@ public class SearchAuthor extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_search_author, container, false);
 
-        lvBooks = (ListView) v.findViewById(R.id.list_books);
         mEditText = (EditText) v.findViewById(R.id.nomautorinsertat);
         lvBooks = (ListView) v.findViewById(R.id.list_autor);
 
@@ -73,14 +74,25 @@ public class SearchAuthor extends Fragment {
             @Override
             public void onClick(View v) {
 
-                mBooks = bookData.getAllAuthors();
+                mBooks = bookData.getAllBooks();
                 autors = new AdapterAutors(getActivity(), mBooks);
                 lvBooks.setAdapter(autors);
 
-                Toast.makeText(getActivity(), "CHOSE ONE OF THIS AUTHORS", Toast.LENGTH_LONG).show();
+                Snackbar.make(v, "CHOOSE ONE OF THESE AUTHORS FOR SEE HIS BOOKS", Snackbar.LENGTH_LONG).show();
+
+                lvBooks.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        String nomautor = lvBooks.getItemAtPosition(position).toString();
+                        mEditText.setText(nomautor);
+                    }
+                });
 
             }
         });
+
+
 
 
         return v;

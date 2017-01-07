@@ -6,9 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -48,20 +50,16 @@ public class AdapterIDI extends BaseAdapter {
 
         View v = View.inflate(mContext, R.layout.list_view, null);
         TextView nomll = (TextView) v.findViewById(R.id.nomllibre);
-        valoracio = (RatingBar) v.findViewById(R.id.estrellas);
 
         nomll.setText(mBooks.get(position).getTitle());
+
 
         v.setTag(mBooks.get(position).getId());
 
         return v;
+
     }
 
-    public void expandir() {
-        valoracio.setVisibility(View.VISIBLE);
-    }
+    public Book llibre(int position) { return mBooks.get(position); }
 
-    public void desexpandir() {
-        valoracio.setVisibility(View.GONE);
-    }
 }

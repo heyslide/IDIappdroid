@@ -80,11 +80,9 @@ public class Book {
     @Override
     public String toString() {
 
-        return String.format("%s - %s", title, author);
-        //return String.format("%s\nAuthor: %s\nCategory: %s\nYear: %d     Personal Evaluation: %s ", title, author, category, year, personal_evaluation);
+        return String.format("%s", author);
+
     }
 
-    public String getNameAuthor() {
-        return String.format("%s", author);
-    }
+
 }

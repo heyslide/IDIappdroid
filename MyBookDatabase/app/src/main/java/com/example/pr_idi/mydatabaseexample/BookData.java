@@ -23,10 +23,15 @@ public class BookData {
     private MySQLiteHelper dbHelper;
 
     // Here we only select Title and Author, must select the appropriate columns
-    private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
-            MySQLiteHelper.COLUMN_TITLE, MySQLiteHelper.COLUMN_AUTHOR,
-            MySQLiteHelper.COLUMN_PUBLISHER, MySQLiteHelper.COLUMN_YEAR,
-            MySQLiteHelper.COLUMN_CATEGORY, MySQLiteHelper.COLUMN_PERSONAL_EVALUATION};
+    private String[] allColumns = {
+            MySQLiteHelper.COLUMN_ID,
+            MySQLiteHelper.COLUMN_TITLE,
+            MySQLiteHelper.COLUMN_AUTHOR,
+            MySQLiteHelper.COLUMN_PUBLISHER,
+            MySQLiteHelper.COLUMN_YEAR,
+            MySQLiteHelper.COLUMN_CATEGORY,
+            MySQLiteHelper.COLUMN_PERSONAL_EVALUATION
+    };
 
     public BookData(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -105,7 +110,7 @@ public class BookData {
         List<Book> books = new ArrayList<>();
 
         Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS, null,
-                MySQLiteHelper.COLUMN_AUTHOR + "= '" + Author+"'", null, null, null, MySQLiteHelper.COLUMN_TITLE + " COLLATE NOCASE");
+                MySQLiteHelper.COLUMN_AUTHOR + "= '" + Author+"'" + " COLLATE NOCASE", null, null, null, MySQLiteHelper.COLUMN_TITLE + " COLLATE NOCASE");
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -181,19 +186,4 @@ public class BookData {
         return books;
     }
 
-    public List<Book> getAllAuthors() {
-        List<Book> books = new ArrayList<>();
-
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS, null,
-                MySQLiteHelper.COLUMN_AUTHOR, null, null, null, MySQLiteHelper.COLUMN_AUTHOR + " COLLATE NOCASE");
-
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            Book book = cursorToBook(cursor);
-            books.add(book);
-            cursor.moveToNext();
-        }
-        cursor.close();
-        return books;
-    }
 }

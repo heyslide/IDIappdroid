@@ -113,9 +113,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                         listener.onViewClicked(v, getAdapterPosition());
                 }
              });
-
-
-
         }
     }
 }
