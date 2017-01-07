@@ -51,7 +51,7 @@ public class SearchAuthor extends Fragment {
            public void onClick(View v) {
 
                if (mEditText.getText().toString().isEmpty()) {
-                   Toast.makeText(getActivity(), "The field is Requiered", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(getActivity(), "Insert Author Name", Toast.LENGTH_SHORT).show();
                }
 
                else {

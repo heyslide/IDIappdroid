@@ -110,7 +110,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             case R.id.nav_autor:
                 fragment = new SearchAuthor();
                 FragmentTransition = true;
-                getSupportActionBar().setTitle("By Author");
+                getSupportActionBar().setTitle("Search Books By Author");
                 break;
 
             case R.id.help:

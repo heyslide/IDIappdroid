@@ -39,6 +39,7 @@ public class BookData {
 
     public void open() throws SQLException {
         database = dbHelper.getWritableDatabase();
+
     }
 
     public void close() {
@@ -46,6 +47,8 @@ public class BookData {
     }
 
     public Book createBook(String title, String author, String publisher, Integer year, String category, String rating) {
+
+//        database.execSQL("CREATE TABLE " + MySQLiteHelper.TABLE_BOOKS + "(id INTEGER PRIMARY KEY, name    TEXT unique)");
         ContentValues values = new ContentValues();
         Log.d("Creating", "Creating " + title + " " + author);
 
@@ -96,8 +99,11 @@ public class BookData {
     public List<Book> getAllBooks() {
         List<Book> books = new ArrayList<>();
 
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS,
-                allColumns, null, null, null, null, MySQLiteHelper.COLUMN_AUTHOR + " COLLATE NOCASE");
+        //Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS,
+        //        allColumns, null, null, null, null, MySQLiteHelper.COLUMN_AUTHOR + " COLLATE NOCASE");
+
+        Cursor cursor = database.query(true, MySQLiteHelper.TABLE_BOOKS, allColumns,
+                null, null, MySQLiteHelper.COLUMN_AUTHOR, null, MySQLiteHelper.COLUMN_AUTHOR + " COLLATE NOCASE", null);
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {

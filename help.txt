@@ -1,7 +1,10 @@
 
 PANTALLA PRINCIPAL:
 En aquesta pantalla trobem una llista dels titols dels llibres de la nostra base de dades, al clicar sobre un d'ells es podrà modificar la valoració personal del mateix.
-Per canviar la valoració personal apareixerà un Text amb la Valoració actual del llibre i una spinner amb totes les opcions de valoració, al clicar sobre MODIFY es cambiarà la valoració per la seleccionada al spinner y es tancarà la opcio de modificació.
+
+Per canviar la valoració personal apareixerà un Text amb la Valoració actual del llibre i una spinner amb totes les opcions de valoració, al clicar sobre MODIFY es cambiarà la valoració per la seleccionada al spinner. 
+
+Per tancar la modificació, o obrir la modificació d'un altre llibre, primer s'ha de premer CLOSE
 
 ADD NEW BOOK:
 Per afegir un llibre nou, únicament s'haurà de posar tota la informaciò requerida sobre aquest llibre que es Titol, Autor, Any, Publicador, Categoria (de la llista de Categories), Valoració Personal (que pot ser Molt dolenta, dolenta, regular, bona i molt bona).

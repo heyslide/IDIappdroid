@@ -55,14 +55,16 @@ public class MainFragment extends Fragment {
                 if (!obert) {
                     final View Layout = view.findViewById(R.id.layoutdesplegable);
                     final View Layout2 = view.findViewById(R.id.layoutdesplegable2);
+                    final Button tancar = (Button) view.findViewById(R.id.tancar);
                     Layout.setVisibility(View.VISIBLE);
                     Layout2.setVisibility(View.VISIBLE);
+                    tancar.setVisibility(View.VISIBLE);
                     obert = true;
 
                     final TextView nomllibre = (TextView) view.findViewById(R.id.nomllibre);
                     nomllibre.setTextColor(Color.parseColor("#0000FF"));
 
-                    TextView valoracio = (TextView) view.findViewById(R.id.valoracio);
+                    final TextView valoracio = (TextView) view.findViewById(R.id.valoracio);
 
                     final Book book = adapter.llibre(position);
 
@@ -87,22 +89,44 @@ public class MainFragment extends Fragment {
                     }
 
 
-                    if (book.getPersonal_evaluation() == "Very Good") {
-                        valoracio.setTextColor(Color.parseColor("#136301"));
-                    }
-
-
                     final Spinner spinner = (Spinner) view.findViewById(R.id.modificaciodepuntuacio);
 
                     Button modificacio = (Button) view.findViewById(R.id.modificacioboto);
                     modificacio.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-
                             bookData.canviavaloracio(book, spinner.getSelectedItem().toString());
+                            book.setPersonal_evaluation(spinner.getSelectedItem().toString());
 
+                            valoracio.setText(book.getPersonal_evaluation());
+
+                            switch(book.getPersonal_evaluation()) {
+                                case "Very bad":
+                                    valoracio.setTextColor(Color.parseColor("#9e0303"));
+                                    break;
+                                case "Bad":
+                                    valoracio.setTextColor(Color.parseColor("#db8300"));
+                                    break;
+                                case "Fair":
+                                    valoracio.setTextColor(Color.parseColor("#acce04"));
+                                    break;
+                                case "Good":
+                                    valoracio.setTextColor(Color.parseColor("#26b705"));
+                                    break;
+                                case "Very good":
+                                    valoracio.setTextColor(Color.parseColor("#136301"));
+                                    break;
+                            }
+                        }
+                    });
+
+
+                    tancar.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
                             Layout.setVisibility(View.GONE);
                             Layout2.setVisibility(View.GONE);
+                            tancar.setVisibility(View.GONE);
                             nomllibre.setTextColor(Color.parseColor("#000000"));
                             obert = false;
                         }
@@ -110,7 +134,7 @@ public class MainFragment extends Fragment {
                 }
 
                 else {
-                    Toast.makeText(getActivity(), "First you have to modify or leave the same valuation to the selected book", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Please, to open an other book, first close the opened one", Toast.LENGTH_LONG).show();
                 }
             }
 

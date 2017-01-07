@@ -179,11 +179,6 @@
                                   android:layout_marginLeft="15dp"
                                   android:layout_marginRight="15dp" />
 
-                        <ImageView android:layout_width="166dp"
-                                   android:layout_height="272dp"
-                                   android:layout_marginLeft="40dp"
-                                   android:layout_marginRight="15dp"
-                                   android:src="@drawable/principal"/>
 
                     </LinearLayout>
 
