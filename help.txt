@@ -1,0 +1,26 @@
+
+PANTALLA PRINCIPAL:
+En aquesta pantalla trobem una llista dels titols dels llibres de la nostra base de dades, al clicar sobre un d'ells es podrà modificar la valoració personal del mateix.
+Per canviar la valoració personal apareixerà un Text amb la Valoració actual del llibre i una spinner amb totes les opcions de valoració, al clicar sobre MODIFY es cambiarà la valoració per la seleccionada al spinner y es tancarà la opcio de modificació.
+
+ADD NEW BOOK:
+Per afegir un llibre nou, únicament s'haurà de posar tota la informaciò requerida sobre aquest llibre que es Titol, Autor, Any, Publicador, Categoria (de la llista de Categories), Valoració Personal (que pot ser Molt dolenta, dolenta, regular, bona i molt bona).
+Al afegir un nou llibre, automaticament s'afegeix a la base de dades, pero els camps es buidaran per si es volen afegir més llibres.
+Es important posar valor a tots els camps.
+
+VIEW ALL THE BOOK DATA:
+En aquesta pantalla es visualitza la informació complerta de tots els llibres, hi ha un cercador per títol i es poden esborrar els llibres clicant a la icona de la paperera.
+
+FIND BOOKS BY AUTHOR:
+En poden buscar els llibres de dues formes, insertant el nom del autor manualment o mitjançant el boto VIEW ALL AUTHORS i prement sobre l'autor que es vol buscar.
+
+
+
+
+
+
+
+
+
+
+

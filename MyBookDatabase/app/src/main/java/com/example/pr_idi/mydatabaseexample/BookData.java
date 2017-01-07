@@ -88,11 +88,16 @@ public class BookData {
                 + " = " + id, null);
     }
 
+    public void modifyPersonalValoration(Book book) {
+        long id = book.getId();
+
+    }
+
     public List<Book> getAllBooks() {
         List<Book> books = new ArrayList<>();
 
         Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS,
-                allColumns, null, null, null, null, null);
+                allColumns, null, null, null, null, MySQLiteHelper.COLUMN_AUTHOR + " COLLATE NOCASE");
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -185,5 +190,16 @@ public class BookData {
         cursor.close();
         return books;
     }
+
+    public void canviavaloracio(Book book, String novavaloracio) {
+
+        long id = book.getId();
+        ContentValues values = new ContentValues();
+        values.put(MySQLiteHelper.COLUMN_PERSONAL_EVALUATION, novavaloracio);
+
+        database.update(MySQLiteHelper.TABLE_BOOKS, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);
+    }
+
+
 
 }

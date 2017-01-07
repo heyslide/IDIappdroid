@@ -8,7 +8,7 @@
     <string name="help">Help</string>
     <string name="Registrar">Add New Book</string>
     <string name="Cerca">Find</string>
-    <string name="Autor">Find By Author</string>
+    <string name="Autor">Find Books By Author</string>
     <string name="Titol">By Title</string>
     <string name="All">View all the Book Data</string>
     <string name="Valoracio">Modify personal valoration</string>
@@ -19,7 +19,7 @@
     <string name="publicador">Publisher</string>
     <string name="genere">Category</string>
     <string name="evaluacio">Personal Evaluation</string>
-    <string name="principal">Principal</string>
+    <string name="principal">Home</string>
 
     <string name="action_settings">Settings</string>
 

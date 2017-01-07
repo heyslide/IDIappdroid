@@ -3,6 +3,7 @@ package com.example.pr_idi.mydatabaseexample;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,7 +99,7 @@ public class MainFragment extends Fragment {
                         @Override
                         public void onClick(View v) {
 
-                            book.setPersonal_evaluation(spinner.getSelectedItem().toString());
+                            bookData.canviavaloracio(book, spinner.getSelectedItem().toString());
 
                             Layout.setVisibility(View.GONE);
                             Layout2.setVisibility(View.GONE);

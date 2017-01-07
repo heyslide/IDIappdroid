@@ -50,22 +50,22 @@ public class SearchAuthor extends Fragment {
            @Override
            public void onClick(View v) {
 
-
-           if (mEditText.getText().toString().isEmpty()) {
-               Toast.makeText(getActivity(), "The field is Requiered", Toast.LENGTH_SHORT).show();
-           }
-
-           else {
-               String nomautor = mEditText.getText().toString();
-
-               mBooks = bookData.getBooksAuthor(nomautor);
-               adapter = new AdapterIDI(getActivity(), mBooks);
-               lvBooks.setAdapter(adapter);
-
-               if (adapter.isEmpty()) {
-                   Toast.makeText(getActivity(), "The Author " + nomautor + " is not at the DataBase", Toast.LENGTH_SHORT).show();
+               if (mEditText.getText().toString().isEmpty()) {
+                   Toast.makeText(getActivity(), "The field is Requiered", Toast.LENGTH_SHORT).show();
                }
-           }
+
+               else {
+                   String nomautor = mEditText.getText().toString();
+
+                   mBooks = bookData.getBooksAuthor(nomautor);
+                   adapter = new AdapterIDI(getActivity(), mBooks);
+                   lvBooks.setAdapter(adapter);
+
+                   if (adapter.isEmpty()) {
+                       Toast.makeText(getActivity(), "The Author " + nomautor + " is not at the DataBase", Toast.LENGTH_SHORT).show();
+                   }
+
+               }
            }
         });
 
@@ -86,6 +86,11 @@ public class SearchAuthor extends Fragment {
 
                         String nomautor = lvBooks.getItemAtPosition(position).toString();
                         mEditText.setText(nomautor);
+
+                        mBooks = bookData.getBooksAuthor(nomautor);
+                        adapter = new AdapterIDI(getActivity(), mBooks);
+                        lvBooks.setAdapter(adapter);
+
                     }
                 });
 

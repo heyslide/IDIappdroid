@@ -33,16 +33,136 @@
                                   android:layout_height="match_parent" >
 
                         <TextView android:id="@+id/textView1"
-                                  android:text="This app will help you manage your book collection.
-The first visible screen when you open the app is the Quick View screen: here, you'll see all your books, ordered by the title. To open the menu, touch the menu icon in the upper-left corner or slide your finger from the left side of the screen."
+                                  android:text="This app has been developed to have your book database always with you in your phone.\n \nTo access the menu, touch the icon in the upper-left corner or slide your finger across the screen from the left to right\n\nThe options are the following:\n\n"
                                   android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
+                                  android:layout_height="159dp"
+                                  android:textColor="@color/Black"
+                                  android:textSize="16dp"
                                   android:layout_marginTop="30dp"
                                   android:layout_marginBottom="10dp"
                                   android:layout_marginLeft="15dp"
                                   android:layout_marginRight="15dp"/>
 
-                        <!-- POSAR LOGO?? -->
+                        <LinearLayout android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_marginLeft="60dp"
+                                      android:orientation="horizontal">
+
+                            <TextView android:id="@+id/textView1.1"
+                                      android:text="- Home"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_gravity="center"
+                                      android:textColor="@color/Black"
+                                      android:layout_marginRight="130dp"
+                                      android:textSize="16dp"/>
+
+                            <ImageView android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:src="@drawable/home"
+                            />
+
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_marginLeft="60dp"
+                                      android:layout_marginTop="5dp"
+                                      android:orientation="horizontal">
+
+                            <TextView android:id="@+id/textView1.2"
+                                      android:text="- Add a new book"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_gravity="center"
+                                      android:textColor="@color/Black"
+                                      android:layout_marginRight="60dp"
+                                      android:textSize="16dp"/>
+
+                            <ImageView android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:src="@drawable/ic_add_black_24dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_marginLeft="60dp"
+                                      android:layout_marginTop="5dp"
+                                      android:orientation="horizontal">
+
+                            <TextView android:id="@+id/textView1.3"
+                                      android:text="- View all the book data"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_gravity="center"
+                                      android:textColor="@color/Black"
+                                      android:layout_marginRight="18dp"
+                                      android:textSize="16dp"/>
+
+                            <ImageView android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:src="@drawable/book_open_page_variant"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_marginLeft="60dp"
+                                      android:layout_marginTop="5dp"
+                                      android:orientation="horizontal">
+
+                            <TextView android:id="@+id/textView1.4"
+                                      android:text="- Find Books By Author"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_gravity="center"
+                                      android:textColor="@color/Black"
+                                      android:layout_marginRight="22dp"
+                                      android:textSize="16dp"/>
+
+                            <ImageView android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:src="@drawable/account_search"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_marginLeft="60dp"
+                                      android:layout_marginTop="5dp"
+                                      android:orientation="horizontal">
+
+                            <TextView android:id="@+id/textView1.6"
+                                      android:text="- Help and about"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_gravity="center"
+                                      android:textColor="@color/Black"
+                                      android:layout_marginRight="59dp"
+                                      android:textSize="16dp"/>
+
+                            <ImageView android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:src="@drawable/ic_help_outline_black_24dp"/>
+
+                            <ImageView android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:src="@drawable/exclamation"/>
+
+                        </LinearLayout>
+
+                        <TextView android:id="@+id/textView1.5"
+                                  android:text="In the tabs above you can get help for every option, identified by its menu icon."
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:textColor="@color/Black"
+                                  android:textSize="16dp"
+                                  android:layout_marginTop="30dp"
+                                  android:layout_marginBottom="10dp"
+                                  android:layout_marginLeft="15dp"
+                                  android:layout_marginRight="15dp"/>
+
                     </LinearLayout>
 
                     <LinearLayout android:id="@+id/tab2"
@@ -107,3 +227,6 @@ The first visible screen when you open the app is the Quick View screen: here, y
 
 
 </FrameLayout>
+
+
+
