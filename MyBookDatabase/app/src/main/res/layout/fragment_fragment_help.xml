@@ -4,12 +4,6 @@
              android:layout_height="match_parent"
              tools:context="com.example.pr_idi.mydatabaseexample.FragmentHelp">
 
-    <android.support.v4.view.ViewPager
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
         <TabHost android:id="@android:id/tabhost"
                  android:layout_width="match_parent"
                  android:layout_height="match_parent">
@@ -180,7 +174,7 @@
                                           android:orientation="vertical">
 
                                 <TextView android:id="@+id/textView2"
-                                          android:text="In this screen a list with the titles of the books in the database can be found.\n \nThe personal evaluation of each of them can be changed by touching them and selecting the new valoration in the visible spinner.\n\nTouch MODIFY to confirm the change, or the drop-up icon if you decided against it."
+                                          android:text="In this screen a list with the titles of the books in the database can be found.\n \nThe personal evaluation of each of them can be changed by touching them and selecting the new valoration in the visible spinner.\n\nTouch MODIFY to confirm the change, or the drop-up icon if you decide against it."
                                           android:layout_width="wrap_content"
                                           android:layout_height="wrap_content"
                                           android:textColor="@color/Black"
@@ -255,7 +249,7 @@
                                           android:orientation="vertical">
 
                                 <TextView android:id="@+id/textView4"
-                                          android:text="In this screen the full data of all books can be found.\n\nBooks can also be searched by title by the serch icon, or deleted from the database by touching the trash bin icon."
+                                          android:text="In this screen the full data of all books can be found.\n\nBooks can also be searched by title by the search icon, or deleted from the database by touching the trash bin icon."
                                           android:layout_width="wrap_content"
                                           android:layout_height="wrap_content"
                                           android:textColor="@color/Black"
