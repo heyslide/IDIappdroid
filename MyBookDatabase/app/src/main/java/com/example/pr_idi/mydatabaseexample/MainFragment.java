@@ -55,7 +55,7 @@ public class MainFragment extends Fragment {
                 if (!obert) {
                     final View Layout = view.findViewById(R.id.layoutdesplegable);
                     final View Layout2 = view.findViewById(R.id.layoutdesplegable2);
-                    final Button tancar = (Button) view.findViewById(R.id.tancar);
+                    final ImageButton tancar = (ImageButton) view.findViewById(R.id.tancar);
                     Layout.setVisibility(View.VISIBLE);
                     Layout2.setVisibility(View.VISIBLE);
                     tancar.setVisibility(View.VISIBLE);
