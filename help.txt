@@ -6,16 +6,37 @@ Per canviar la valoració personal apareixerà un Text amb la Valoració actual del
 
 Per tancar la modificació, o obrir la modificació d'un altre llibre, primer s'ha de premer CLOSE
 
+MAIN SCREEN:
+In this screen a list with the titles of the books in the database can be found. 
+
+The personal evaluation of each of them can be changed by touching them and selecting the new puntuation in the visible spinner. Touch MODIFY to confirm the change, or CLOSE if you decided against it.
+
+------
+
 ADD NEW BOOK:
 Per afegir un llibre nou, únicament s'haurà de posar tota la informaciò requerida sobre aquest llibre que es Titol, Autor, Any, Publicador, Categoria (de la llista de Categories), Valoració Personal (que pot ser Molt dolenta, dolenta, regular, bona i molt bona).
 Al afegir un nou llibre, automaticament s'afegeix a la base de dades, pero els camps es buidaran per si es volen afegir més llibres.
 Es important posar valor a tots els camps.
 
+ADD NEW BOOK:
+To add a new book, just fill every field (Title, Author, Year, Publisher, Category and Personal evaluation) and touch ADD NEW BOOK. All fields must be filled.
+After adding the book, the fields will be emptied to allow you to input more books.
+
+--------------
+
 VIEW ALL THE BOOK DATA:
 En aquesta pantalla es visualitza la informació complerta de tots els llibres, hi ha un cercador per títol i es poden esborrar els llibres clicant a la icona de la paperera.
 
+VIEW ALL THE BOOK DATA:
+In this screen the full data of all books can be found. Books can also be searched by title and deleted from the database by touching the trash bin icon.
+
+----------------
+
 FIND BOOKS BY AUTHOR:
 En poden buscar els llibres de dues formes, insertant el nom del autor manualment o mitjançant el boto VIEW ALL AUTHORS i prement sobre l'autor que es vol buscar.
+
+FIND BOOKS BY AUTHOR:
+In this screen books can be found by author, either by writing the author's name or by touching VIEW ALL AUTHORS and selecting the desired author.
 
 
 
