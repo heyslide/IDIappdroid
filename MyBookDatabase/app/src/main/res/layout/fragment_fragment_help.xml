@@ -29,6 +29,7 @@
 
                     <LinearLayout android:id="@+id/tab1"
                                   android:orientation="vertical"
+                                  android:background="@color/WhiteSmoke"
                                   android:layout_width="match_parent"
                                   android:layout_height="match_parent" >
 
@@ -166,18 +167,39 @@
                     </LinearLayout>
 
                     <LinearLayout android:id="@+id/tab2"
+                                  android:background="@color/WhiteSmoke"
                                   android:orientation="vertical"
                                   android:layout_width="match_parent"
                                   android:layout_height="match_parent" >
 
-                        <TextView android:id="@+id/textView2"
-                                  android:text="EXPLICACIO PANTALLA PRINCIPAL"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:layout_marginTop="30dp"
-                                  android:layout_marginBottom="10dp"
-                                  android:layout_marginLeft="15dp"
-                                  android:layout_marginRight="15dp" />
+                        <ScrollView android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                            <LinearLayout android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:orientation="vertical">
+
+                                <TextView android:id="@+id/textView2"
+                                          android:text="In this screen a list with the titles of the books in the database can be found.\n \nThe personal evaluation of each of them can be changed by touching them and selecting the new valoration in the visible spinner.\n\nTouch MODIFY to confirm the change, or the drop-up icon if you decided against it."
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:textColor="@color/Black"
+                                          android:textSize="16dp"
+                                          android:layout_marginTop="10dp"
+                                          android:layout_marginBottom="10dp"
+                                          android:layout_marginLeft="15dp"
+                                          android:layout_marginRight="15dp" />
+
+                                <ImageView android:layout_width="400dp"
+                                           android:layout_height="400dp"
+                                           android:layout_gravity="center"
+                                           android:src="@drawable/principal"
+                                           android:layout_marginTop="10dp"/>
+
+
+                            </LinearLayout>
+
+                       </ScrollView>
 
 
                     </LinearLayout>
@@ -185,41 +207,117 @@
                     <LinearLayout android:id="@+id/tab3"
                                   android:orientation="vertical"
                                   android:layout_width="match_parent"
+                                  android:background="@color/WhiteSmoke"
                                   android:layout_height="match_parent" >
 
-                        <TextView android:id="@+id/textView3"
-                                  android:text="EXPLICACIO AFEGIR"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content" />
+                        <ScrollView android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                            <LinearLayout android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:orientation="vertical">
+
+                                <TextView android:id="@+id/textView3"
+                                          android:text="To add a new book, just fill every field (Title, Author, Year, Publisher, Category and Personal evaluation) and touch ADD NEW BOOK.\n\nAll fields must be filled.\n\nAfter adding the book, the fields will be emptied to allow you to input more books."
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:textColor="@color/Black"
+                                          android:textSize="16dp"
+                                          android:layout_marginTop="10dp"
+                                          android:layout_marginBottom="10dp"
+                                          android:layout_marginLeft="15dp"
+                                          android:layout_marginRight="15dp"  />
+
+                                <ImageView android:layout_width="400dp"
+                                           android:layout_height="400dp"
+                                           android:layout_gravity="center"
+                                           android:src="@drawable/afegir"
+                                           android:layout_marginTop="10dp"/>
+
+
+                            </LinearLayout>
+
+                        </ScrollView>
 
                     </LinearLayout>
 
                     <LinearLayout android:id="@+id/tab4"
                                   android:orientation="vertical"
+                                  android:background="@color/WhiteSmoke"
                                   android:layout_width="match_parent"
                                   android:layout_height="match_parent" >
 
-                        <TextView android:id="@+id/textView4"
-                                  android:text="EXPLICACIO RECYCLER"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content" />
+                        <ScrollView android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                            <LinearLayout android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:orientation="vertical">
+
+                                <TextView android:id="@+id/textView4"
+                                          android:text="In this screen the full data of all books can be found.\n\nBooks can also be searched by title by the serch icon, or deleted from the database by touching the trash bin icon."
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:textColor="@color/Black"
+                                          android:textSize="16dp"
+                                          android:layout_marginTop="10dp"
+                                          android:layout_marginBottom="10dp"
+                                          android:layout_marginLeft="15dp"
+                                          android:layout_marginRight="15dp" />
+
+                                <ImageView android:layout_width="400dp"
+                                           android:layout_height="400dp"
+                                           android:layout_gravity="center"
+                                           android:src="@drawable/all"
+                                           android:layout_marginTop="10dp"/>
+
+                            </LinearLayout>
+
+                        </ScrollView>
+
                     </LinearLayout>
 
                     <LinearLayout android:id="@+id/tab5"
                                   android:orientation="vertical"
+                                  android:background="@color/WhiteSmoke"
                                   android:layout_width="match_parent"
                                   android:layout_height="match_parent" >
 
-                        <TextView android:id="@+id/textView5"
-                                  android:text="EXPLICACIÓ FIND BY AUTHOR"
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content" />
+                        <ScrollView android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                            <LinearLayout android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:orientation="vertical">
+
+                                <TextView android:id="@+id/textView5"
+                                          android:text="In this screen books can be found by author, either by writing the author's name or by touching VIEW ALL AUTHORS and selecting the desired author.\n\nIn the Image, the VIEW ALL AUTHORS button has been pressed"
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:textColor="@color/Black"
+                                          android:textSize="16dp"
+                                          android:layout_marginTop="10dp"
+                                          android:layout_marginBottom="10dp"
+                                          android:layout_marginLeft="15dp"
+                                          android:layout_marginRight="15dp" />
+
+                                <ImageView android:layout_width="400dp"
+                                           android:layout_height="400dp"
+                                           android:layout_gravity="center"
+                                           android:src="@drawable/cerca"
+                                           android:layout_marginTop="10dp"/>
+
+                            </LinearLayout>
+
+                        </ScrollView>
+
                     </LinearLayout>
 
                 </FrameLayout>
-            </LinearLayout>
-        </TabHost>
 
+            </LinearLayout>
+
+        </TabHost>
 
 </FrameLayout>
 

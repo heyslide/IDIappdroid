@@ -30,6 +30,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
     Toolbar toolbar;
     NavigationView navigationView;
+    private boolean tancar = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,8 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            if(tancar) super.onBackPressed();
+            else drawer.openDrawer(GravityCompat.START);
         }
     }
 
@@ -89,37 +91,42 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         switch (item.getItemId()) {
 
             case R.id.nav_principal:
-
+                tancar = true;
                 fragment = new MainFragment();
                 FragmentTransition = true;
                 getSupportActionBar().setTitle("Book Titles DataBase");
                 break;
 
             case R.id.nav_registrar:
+                tancar = false;
                 fragment = new FragmentAfegir();
                 FragmentTransition = true;
                 getSupportActionBar().setTitle("Add New Book");
                 break;
 
             case R.id.nav_recycle:
+                tancar = false;
                 fragment = new CategoryView();
                 FragmentTransition = true;
                 getSupportActionBar().setTitle("All Book Data");
                 break;
 
             case R.id.nav_autor:
+                tancar = false;
                 fragment = new SearchAuthor();
                 FragmentTransition = true;
                 getSupportActionBar().setTitle("Search Books By Author");
                 break;
 
             case R.id.help:
+                tancar = false;
                 fragment = new FragmentHelp();
                 FragmentTransition = true;
                 getSupportActionBar().setTitle("Help");
                 break;
 
             case R.id.about:
+                tancar = false;
                 fragment = new FragmentAbout();
                 FragmentTransition = true;
                 getSupportActionBar().setTitle("About");
@@ -135,4 +142,5 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
