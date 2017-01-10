@@ -10,11 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Achro on 03/01/2017.
- */
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Book> books;
@@ -26,6 +24,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         this.context = contextact;
         this.books = values;
         this.listener = listener;
+    }
+
+    public void substituteList (List<Book> newvalues) {
+        books = newvalues;
     }
 
     public Object getItem(int position) {
@@ -75,8 +77,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         return books.size();
     }
 
-    public void filterByTitle(String newText) {
-        //pffffffffFFFFFFFFFF
+    public List<Book> filterByTitle(List<Book> tofilter, String newText) {
+        final String lowercase = newText.toLowerCase();
+
+        final List<Book> filteredList = new ArrayList<>();
+        for (Book book : tofilter) {
+            final String title = book.getTitle().toLowerCase();
+            if (title.contains(lowercase)) filteredList.add(book);
+        }
+        return filteredList;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

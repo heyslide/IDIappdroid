@@ -2,10 +2,13 @@ package com.example.pr_idi.mydatabaseexample;
 
 
 import android.app.Dialog;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -79,13 +82,11 @@ public class CategoryView extends Fragment implements RecyclerViewClickListener{
     }
 
     @Override
-    public void onCreateOptionsMenu(
-            Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu (Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_search_title, menu);
 
-        MenuItem item = menu.findItem(R.id.menuSearchTitle);
-/*        SearchView searchView = (SearchView) item.getActionView();
-
+        final MenuItem searchItem = menu.findItem(R.id.action_search);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -94,10 +95,11 @@ public class CategoryView extends Fragment implements RecyclerViewClickListener{
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                myadapter.filterByTitle(newText);
-                return false;
+                final List<Book> filteredList = myadapter.filterByTitle(bookdata.getAllBooksCategory(), newText);
+                myadapter.substituteList(filteredList);
+                return true;
             }
-        });*/
+        });
     }
 
     @Override
