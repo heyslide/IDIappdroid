@@ -79,7 +79,7 @@
                 android:id="@+id/modificacioboto"
                 android:textSize="14dp"
                 android:layout_marginLeft="10dp"
-                android:text="MODIFY"/>
+                android:text="@string/modificacio"/>
 
     </LinearLayout>
 

@@ -7,17 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
-
+import android.widget.TextView;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class SearchAuthor extends Fragment {
 
     private BookData bookData;
@@ -27,6 +22,7 @@ public class SearchAuthor extends Fragment {
     private AdapterIDI adapter;
     private AdapterAutors autors;
     private EditText mEditText;
+    private TextView mTextView;
     private Button mallauthors;
 
     public SearchAuthor() {
@@ -41,6 +37,7 @@ public class SearchAuthor extends Fragment {
 
         mEditText = (EditText) v.findViewById(R.id.nomautorinsertat);
         lvBooks = (ListView) v.findViewById(R.id.list_autor);
+        mTextView = (TextView) v.findViewById(R.id.nomautorcerca);
 
         bookData = new BookData(getActivity());
         bookData.open();
@@ -61,8 +58,16 @@ public class SearchAuthor extends Fragment {
                    adapter = new AdapterIDI(getActivity(), mBooks);
                    lvBooks.setAdapter(adapter);
 
+
+
                    if (adapter.isEmpty()) {
                        Snackbar.make(v, "There isn't any book written by " + nomautor + " in the database", Snackbar.LENGTH_SHORT).show();
+                       mTextView.setVisibility(View.GONE);
+                   }
+                   else {
+                       mTextView.setText("Books Writed by: " + nomautor);
+                       mTextView.setVisibility(View.VISIBLE);
+                       mEditText.setText("");
                    }
 
                }
@@ -77,15 +82,19 @@ public class SearchAuthor extends Fragment {
                 mBooks = bookData.getAllBooks();
                 autors = new AdapterAutors(getActivity(), mBooks);
                 lvBooks.setAdapter(autors);
+                mTextView.setText("");
+                mTextView.setVisibility(View.GONE);
 
-                Snackbar.make(v, "Choose one of these authors to see all their books.", Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(v, "Choose one of these authors to see all their books.", Snackbar.LENGTH_LONG).show();
 
                 lvBooks.setOnItemClickListener(new AdapterView.OnItemClickListener(){
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                         String nomautor = lvBooks.getItemAtPosition(position).toString();
-                        mEditText.setText(nomautor);
+                        mEditText.setText("");
+                        mTextView.setText("Books Writed by: " + nomautor);
+                        mTextView.setVisibility(View.VISIBLE);
 
                         mBooks = bookData.getBooksAuthor(nomautor);
                         adapter = new AdapterIDI(getActivity(), mBooks);

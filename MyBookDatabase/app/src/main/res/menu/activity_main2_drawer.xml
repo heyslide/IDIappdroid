@@ -23,23 +23,19 @@
 
     </group>
 
-    <group android:checkableBehavior="single"
-           android:id="@+id/menuparaaboutyhelp">
+   <item android:title="@string/app_info">
 
-       <!-- <item android:title="@string/app_info">
-            <menu> -->
-                <item
-                    android:id="@+id/help"
-                    android:icon="@drawable/ic_help_outline_black_24dp"
-                    android:title="@string/help"/>
-                <item
-                    android:id="@+id/about"
-                    android:icon="@drawable/exclamation"
-                    android:title="@string/about"/>
-            <!-- </menu>
+        <menu>
+            <item
+                android:id="@+id/help"
+                android:icon="@drawable/ic_help_outline_black_24dp"
+                android:title="@string/help"/>
+            <item
+                android:id="@+id/about"
+                android:icon="@drawable/exclamation"
+                android:title="@string/about"/>
+        </menu>
 
-         </item> -->
-
-    </group>
+     </item>
 
 </menu>
