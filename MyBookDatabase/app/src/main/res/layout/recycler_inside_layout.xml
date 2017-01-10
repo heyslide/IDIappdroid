@@ -58,18 +58,16 @@
 
                     <TextView
                         android:text="Year"
-                        android:layout_width="match_parent"
+                        android:layout_width="255dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textRYear"
-                        android:layout_weight="1" />
+                        android:id="@+id/textRYear" />
 
                     <TextView
                         android:text="Personal evaluation"
-                        android:layout_width="match_parent"
+                        android:layout_width="256dp"
                         android:layout_height="wrap_content"
                         android:id="@+id/textRRating"
-                        android:textColor="@color/DarkBlue"
-                        android:layout_weight="1" />
+                        android:textColor="@color/DarkBlue" />
                 </LinearLayout>
 
                 <RelativeLayout

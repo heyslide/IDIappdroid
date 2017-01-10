@@ -42,7 +42,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
         MainFragment fragment = new MainFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragments, fragment).commit();
-        getSupportActionBar().setTitle("Books Titles DataBase");
+        getSupportActionBar().setTitle("Library GO");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -95,6 +95,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                 fragment = new MainFragment();
                 FragmentTransition = true;
                 getSupportActionBar().setTitle("Library GO");
+                //navigationView.getMenu().getItem(0).setChecked(true);
                 break;
 
             case R.id.nav_registrar:
@@ -102,6 +103,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                 fragment = new FragmentAfegir();
                 FragmentTransition = true;
                 getSupportActionBar().setTitle("Add a new book");
+                //navigationView.getMenu().getItem(1).setChecked(true);
                 break;
 
             case R.id.nav_recycle:
@@ -109,6 +111,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                 fragment = new CategoryView();
                 FragmentTransition = true;
                 getSupportActionBar().setTitle("View all the books");
+                //navigationView.getMenu().getItem(2).setChecked(true);
                 break;
 
             case R.id.nav_autor:
@@ -116,6 +119,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                 fragment = new SearchAuthor();
                 FragmentTransition = true;
                 getSupportActionBar().setTitle("Find books by author");
+                //navigationView.getMenu().getItem(3).setChecked(true);
                 break;
 
             case R.id.help:
@@ -123,6 +127,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                 fragment = new FragmentHelp();
                 FragmentTransition = true;
                 getSupportActionBar().setTitle("Help");
+                //navigationView.getMenu().getItem(4).setChecked(true);
                 break;
 
             case R.id.about:
@@ -130,12 +135,13 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                 fragment = new FragmentAbout();
                 FragmentTransition = true;
                 getSupportActionBar().setTitle("About");
+                //navigationView.getMenu().getItem(5).setChecked(true);
                 break;
         }
 
         if (FragmentTransition) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragments, fragment).commit();
-            item.setChecked(true);
+            //item.setChecked(true);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

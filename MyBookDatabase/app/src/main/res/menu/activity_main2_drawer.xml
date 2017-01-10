@@ -23,27 +23,23 @@
 
     </group>
 
-    <item android:title="@string/Cerca">
-        <menu>
+    <group android:checkableBehavior="single"
+           android:id="@+id/menuparaaboutyhelp">
 
-            <!-- <item
-                android:id="@+id/nav_titol"
-                android:icon="@drawable/ic_search_black_24dp"
-                android:title="@string/Titol"/> -->
-        </menu>
-    </item>
+       <!-- <item android:title="@string/app_info">
+            <menu> -->
+                <item
+                    android:id="@+id/help"
+                    android:icon="@drawable/ic_help_outline_black_24dp"
+                    android:title="@string/help"/>
+                <item
+                    android:id="@+id/about"
+                    android:icon="@drawable/exclamation"
+                    android:title="@string/about"/>
+            <!-- </menu>
 
-    <item android:title="@string/app_info">
-        <menu>
-            <item
-                android:id="@+id/help"
-                android:icon="@drawable/ic_help_outline_black_24dp"
-                android:title="@string/help"/>
-            <item
-                android:id="@+id/about"
-                android:icon="@drawable/exclamation"
-                android:title="@string/about"/>
-        </menu>
-    </item>
+         </item> -->
+
+    </group>
 
 </menu>

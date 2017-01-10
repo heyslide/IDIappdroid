@@ -14,9 +14,10 @@
               android:layout_height="wrap_content"
               android:layout_marginBottom="10dp"
               android:layout_marginTop="10dp"
+              tools:text="HOLAAAAAA"
               android:id="@+id/autor"
-              android:textSize="16dp"
-              android:textColor="@color/Black"/>
+              android:textSize="14dp"
+              android:textColor="#262424"/>
 
 
 

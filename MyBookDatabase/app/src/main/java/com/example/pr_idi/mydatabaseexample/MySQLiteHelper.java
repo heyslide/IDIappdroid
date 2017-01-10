@@ -65,7 +65,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         database.insert(TABLE_BOOKS, null, values);
         values = createValues("Hard-Boiled Wonderland and the End of the World", "Haruki Murakami", "Kodansha International", 1991, "Other", "Very bad");
         database.insert(TABLE_BOOKS, null, values);
-        values = createValues("Shadow divers", "Robert Kurson", "Random House", 2004, "Non-fiction", "Bad");
+        values = createValues("Shadow Divers", "Robert Kurson", "Random House", 2004, "Non-fiction", "Bad");
         database.insert(TABLE_BOOKS, null, values);
     }
 

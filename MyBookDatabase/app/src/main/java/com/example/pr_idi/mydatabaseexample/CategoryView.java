@@ -30,15 +30,6 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class CategoryView extends Fragment implements RecyclerViewClickListener{
-    /* recyclerview -> dos layouts
-        -uno con la recyclerview
-        -otro que define como es cada elemento
-       pasar adapter a recyclerview
-       definir en myAdapter un custom viewholder (llenar elementos de la lista con lo que decimos)
-       coger layout y asignar textos a textviews (en el adapter)
-       y pasarle el adapter a la recyclerview
-
-    */
 
     private RecyclerView recycler;
     private RecyclerView.LayoutManager layoutmanager;
