@@ -2,6 +2,7 @@ package com.example.pr_idi.mydatabaseexample;
 
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -55,12 +56,12 @@ public class FragmentAfegir extends Fragment {
                 String valoracio = rating.getSelectedItem().toString();
 
                 if (titol.isEmpty() || autor.isEmpty() || publicador.isEmpty() || any.isEmpty()) {
-                    Toast.makeText(getActivity(), "All fields are required", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(v, "All fields are required", Snackbar.LENGTH_SHORT).show();
                 }
                 else{
                     Integer anyint = Integer.parseInt(any);
                     book = bookData.createBook(titol, autor, publicador, anyint, categoria, valoracio);
-                    Toast.makeText(getActivity(), "Book Added Correctly", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(v, "Book added correctly!", Snackbar.LENGTH_SHORT).show();
                     title.setText("");
                     author.setText("");
                     publisher.setText("");

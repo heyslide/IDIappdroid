@@ -51,7 +51,7 @@ public class SearchAuthor extends Fragment {
            public void onClick(View v) {
 
                if (mEditText.getText().toString().isEmpty()) {
-                   Toast.makeText(getActivity(), "Insert Author Name", Toast.LENGTH_SHORT).show();
+                   Snackbar.make(v, "Please, write a name", Snackbar.LENGTH_SHORT).show();
                }
 
                else {
@@ -62,7 +62,7 @@ public class SearchAuthor extends Fragment {
                    lvBooks.setAdapter(adapter);
 
                    if (adapter.isEmpty()) {
-                       Toast.makeText(getActivity(), "The Author " + nomautor + " is not at the DataBase", Toast.LENGTH_SHORT).show();
+                       Snackbar.make(v, "There isn't any book written by " + nomautor + " in the database", Snackbar.LENGTH_SHORT).show();
                    }
 
                }
@@ -78,7 +78,7 @@ public class SearchAuthor extends Fragment {
                 autors = new AdapterAutors(getActivity(), mBooks);
                 lvBooks.setAdapter(autors);
 
-                Snackbar.make(v, "CHOOSE ONE OF THESE AUTHORS FOR SEE HIS BOOKS", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(v, "Choose one of these authors to see all their books.", Snackbar.LENGTH_SHORT).show();
 
                 lvBooks.setOnItemClickListener(new AdapterView.OnItemClickListener(){
                     @Override

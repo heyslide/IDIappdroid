@@ -97,6 +97,7 @@ public class CategoryView extends Fragment implements RecyclerViewClickListener{
             public boolean onQueryTextChange(String newText) {
                 final List<Book> filteredList = myadapter.filterByTitle(bookdata.getAllBooksCategory(), newText);
                 myadapter.substituteList(filteredList);
+                myadapter.notifyDataSetChanged();
                 return true;
             }
         });

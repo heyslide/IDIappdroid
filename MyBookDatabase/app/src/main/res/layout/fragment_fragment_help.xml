@@ -28,7 +28,7 @@
                                   android:layout_height="match_parent" >
 
                         <TextView android:id="@+id/textView1"
-                                  android:text="This app has been developed to have your book database always with you in your phone.\n \nTo access the menu, touch the icon in the upper-left corner or slide your finger across the screen from the left to right\n\nThe options are the following:\n\n"
+                                  android:text="Library GO has been developed to have your book database always with you in your phone.\n \nTo access the menu, touch the icon in the upper-left corner or slide your finger across the screen from the left to right\n\nThe options are the following:\n\n"
                                   android:layout_width="wrap_content"
                                   android:layout_height="159dp"
                                   android:textColor="@color/Black"
@@ -108,7 +108,7 @@
                                       android:orientation="horizontal">
 
                             <TextView android:id="@+id/textView1.4"
-                                      android:text="- Find Books By Author"
+                                      android:text="- Find books by author"
                                       android:layout_width="wrap_content"
                                       android:layout_height="wrap_content"
                                       android:layout_gravity="center"
@@ -285,7 +285,7 @@
                                           android:orientation="vertical">
 
                                 <TextView android:id="@+id/textView5"
-                                          android:text="In this screen books can be found by author, either by writing the author's name or by touching VIEW ALL AUTHORS and selecting the desired author.\n\nIn the Image, the VIEW ALL AUTHORS button has been pressed"
+                                          android:text="In this screen books can be found by author, either by writing the author's name or by touching VIEW ALL AUTHORS and selecting the desired author.\n\nIn the image, the VIEW ALL AUTHORS button has been pressed."
                                           android:layout_width="wrap_content"
                                           android:layout_height="wrap_content"
                                           android:textColor="@color/Black"

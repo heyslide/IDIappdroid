@@ -1,24 +1,24 @@
 <resources>
-    <string name="app_name">Book DataBase</string>
-    <string name="title_activity_main2">Book DataBase</string>
+    <string name="app_name">Library GO</string>
+    <string name="title_activity_main2">Library GO</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="about">About</string>
     <string name="help">Help</string>
-    <string name="Registrar">Add New Book</string>
+    <string name="Registrar">Add a new book</string>
     <string name="Cerca">Find</string>
-    <string name="Autor">Find Books By Author</string>
+    <string name="Autor">Find books by author</string>
     <string name="Titol">By Title</string>
-    <string name="All">View all the Book Data</string>
+    <string name="All">View all the books</string>
     <string name="Valoracio">Modify personal valoration</string>
-    <string name="app_info">Aplication Information</string>
+    <string name="app_info">Application information</string>
     <string name="autor">Author</string>
     <string name="title">Title</string>
     <string name="any">Year</string>
     <string name="publicador">Publisher</string>
     <string name="genere">Category</string>
-    <string name="evaluacio">Personal Evaluation</string>
+    <string name="evaluacio">Personal evaluation</string>
     <string name="principal">Home</string>
 
     <string name="action_settings">Settings</string>
@@ -36,13 +36,13 @@
     </string-array>
 
     <string-array name="categories_array">
-        <item>Action</item>
         <item>Fantasy</item>
         <item>Historical</item>
         <item>Humor</item>
         <item>Mystery/Thriller</item>
         <item>Non-fiction</item>
         <item>Realistic</item>
+        <item>Romance</item>
         <item>Sci-fi</item>
         <item>Other</item>
     </string-array>

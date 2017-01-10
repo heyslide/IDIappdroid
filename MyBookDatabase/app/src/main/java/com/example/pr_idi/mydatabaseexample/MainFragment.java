@@ -2,6 +2,7 @@ package com.example.pr_idi.mydatabaseexample;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -134,7 +135,7 @@ public class MainFragment extends Fragment {
                 }
 
                 else {
-                    Toast.makeText(getActivity(), "Please, to open an other book, first close the opened one", Toast.LENGTH_LONG).show();
+                    Snackbar.make(view, "Please, to open another book, first close the opened one", Snackbar.LENGTH_LONG).show();
                 }
             }
 

@@ -94,28 +94,28 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                 tancar = true;
                 fragment = new MainFragment();
                 FragmentTransition = true;
-                getSupportActionBar().setTitle("Book Titles DataBase");
+                getSupportActionBar().setTitle("Library GO");
                 break;
 
             case R.id.nav_registrar:
                 tancar = false;
                 fragment = new FragmentAfegir();
                 FragmentTransition = true;
-                getSupportActionBar().setTitle("Add New Book");
+                getSupportActionBar().setTitle("Add a new book");
                 break;
 
             case R.id.nav_recycle:
                 tancar = false;
                 fragment = new CategoryView();
                 FragmentTransition = true;
-                getSupportActionBar().setTitle("All Book Data");
+                getSupportActionBar().setTitle("View all the books");
                 break;
 
             case R.id.nav_autor:
                 tancar = false;
                 fragment = new SearchAuthor();
                 FragmentTransition = true;
-                getSupportActionBar().setTitle("Search Books By Author");
+                getSupportActionBar().setTitle("Find books by author");
                 break;
 
             case R.id.help:
