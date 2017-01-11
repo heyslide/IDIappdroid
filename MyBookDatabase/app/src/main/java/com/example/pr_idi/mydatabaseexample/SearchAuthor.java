@@ -65,7 +65,7 @@ public class SearchAuthor extends Fragment {
                    }
                    else {
 
-                       mTextView.setText("These are the books written by " + nomautor + ":");
+                       mTextView.setText("Searched: " + nomautor);
 
                        mTextView.setVisibility(View.VISIBLE);
                        mTextView.setTextColor(Color.parseColor("#000080"));

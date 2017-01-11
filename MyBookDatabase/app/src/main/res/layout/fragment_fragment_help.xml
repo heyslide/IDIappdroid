@@ -25,18 +25,18 @@
                                   android:orientation="vertical"
                                   android:background="@color/WhiteSmoke"
                                   android:layout_width="match_parent"
-                                  android:layout_height="match_parent" >
+                                  android:layout_height="match_parent" android:weightSum="1">
 
                         <TextView android:id="@+id/textView1"
                                   android:text="Library on the go has been developed to have your book collection always with you in your phone.\n \nTo access the menu, touch the icon in the upper-left corner or slide your finger across the screen from the left to the right.\n\nThe options are the following:\n\n"
                                   android:layout_width="wrap_content"
-                                  android:layout_height="159dp"
+                                  android:layout_height="173dp"
                                   android:textColor="@color/Black"
                                   android:textSize="16dp"
                                   android:layout_marginTop="30dp"
                                   android:layout_marginBottom="10dp"
                                   android:layout_marginLeft="15dp"
-                                  android:layout_marginRight="15dp"/>
+                                  android:layout_marginRight="15dp" android:layout_weight="0.09"/>
 
                         <LinearLayout android:layout_width="wrap_content"
                                       android:layout_height="wrap_content"
