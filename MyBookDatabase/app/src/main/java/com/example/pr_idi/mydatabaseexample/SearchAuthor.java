@@ -84,7 +84,7 @@ public class SearchAuthor extends Fragment {
                 mBooks = bookData.getAllBooks();
                 autors = new AdapterAutors(getActivity(), mBooks);
                 lvBooks.setAdapter(autors);
-                mTextView.setText("Select One author for see his books:");
+                mTextView.setText("Select an author to see their books:");
                 mTextView.setTextColor(Color.parseColor("#689F38"));
                 mTextView.setVisibility(View.VISIBLE);
 
