@@ -37,9 +37,13 @@ public class FragmentAfegir extends Fragment {
         bookData.open();
 
         final EditText title = (EditText) v.findViewById(R.id.textAddTitle);
+        title.setHint("ex: Pride and Prejudice");
         final EditText author = (EditText) v.findViewById(R.id.textAddAuthor);
+        author.setHint("ex: Jane Austen");
         final EditText publisher = (EditText) v.findViewById(R.id.textAddPublisher);
+        publisher.setHint("ex: Whitehall");
         final EditText year = (EditText) v.findViewById(R.id.textAddYear);
+        year.setHint("ex: 1813");
         final Spinner category = (Spinner) v.findViewById(R.id.spinAddCategory);
         final Spinner rating = (Spinner) v.findViewById(R.id.spinAddPuntuation);
 

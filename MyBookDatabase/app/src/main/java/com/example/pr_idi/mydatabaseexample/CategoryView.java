@@ -102,7 +102,7 @@ public class CategoryView extends Fragment implements RecyclerViewClickListener{
     }
 
     @Override
-    public void onViewClicked(View v, final int position) {
+    public void onViewClicked(final View v, final int position) {
         if (v.getId() == R.id.ivDeleteBook) {
             //Toast.makeText(getActivity(), "This is item " + position, Toast.LENGTH_SHORT).show();
             
@@ -114,11 +114,11 @@ public class CategoryView extends Fragment implements RecyclerViewClickListener{
                     builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            Snackbar.make(v, "The book was deleted :(", Snackbar.LENGTH_SHORT).show();
                             Book book = (Book) myadapter.getItem(position);
                             bookdata.deleteBook(book);
                             myadapter.deleteItem(position);
                             myadapter.notifyDataSetChanged();
-                            Snackbar.make(getView(), "The book was deleted :(", Snackbar.LENGTH_SHORT).show();
                         }
                     });
 

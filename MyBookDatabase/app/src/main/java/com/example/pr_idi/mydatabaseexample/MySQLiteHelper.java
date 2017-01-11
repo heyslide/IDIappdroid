@@ -75,9 +75,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         database.insert(TABLE_BOOKS, null, values);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this.context);
-        builder.setMessage("Welcome to Library on the go! Please open the menu (touch the" +
-                " icon in the corner or slide your finger across the screen) to start. If you have any doubts, check the Help page. " +
-                "We hope you enjoy using our app. Thanks!");
+        builder.setMessage("Welcome to Library on the go!\n\nPlease open the menu (touch the" +
+                " icon in the corner or slide your finger across the screen) to start. \nIf you have any doubts, check the Help page." +
+                "\n\nWe hope you enjoy using our app. Thanks!");
         builder.setPositiveButton("OK!", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {/*Res*/}
