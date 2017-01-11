@@ -28,7 +28,7 @@
                                   android:layout_height="match_parent" >
 
                         <TextView android:id="@+id/textView1"
-                                  android:text="Library GO has been developed to have your book collection always with you in your phone.\n \nTo access the menu, touch the icon in the upper-left corner or slide your finger across the screen from the left to the right.\n\nThe options are the following:\n\n"
+                                  android:text="Library on the go has been developed to have your book collection always with you in your phone.\n \nTo access the menu, touch the icon in the upper-left corner or slide your finger across the screen from the left to the right.\n\nThe options are the following:\n\n"
                                   android:layout_width="wrap_content"
                                   android:layout_height="159dp"
                                   android:textColor="@color/Black"
@@ -87,7 +87,7 @@
                                       android:orientation="horizontal">
 
                             <TextView android:id="@+id/textView1.3"
-                                      android:text="- View all the book data"
+                                      android:text="- View all the books"
                                       android:layout_width="wrap_content"
                                       android:layout_height="wrap_content"
                                       android:layout_gravity="center"
@@ -174,7 +174,7 @@
                                           android:orientation="vertical">
 
                                 <TextView android:id="@+id/textView2"
-                                          android:text="In this screen a list with the titles of the books in the database can be found.\n \nThe personal evaluation of each of them can be changed by touching them and selecting the new valoration in the visible spinner.\n\nTouch MODIFY to confirm the change, or the drop-up icon if you decide against it."
+                                          android:text="In this screen you'll find a list with the titles of the books in the database.\n \nThe personal evaluation of each of them can be changed by touching them and selecting the new valoration in the visible spinner.\n\nTouch MODIFY to confirm the change, or the drop-up icon if you decide against it."
                                           android:layout_width="wrap_content"
                                           android:layout_height="wrap_content"
                                           android:textColor="@color/Black"
@@ -249,7 +249,7 @@
                                           android:orientation="vertical">
 
                                 <TextView android:id="@+id/textView4"
-                                          android:text="In this screen the full data of all books can be found.\n\nBooks can also be searched by its title touching the search icon, or deleted from the database touching the trash bin icon."
+                                          android:text="In this screen you'll find the full data of all the books you have added.\n\nBYou can also search for books by its title touching the search icon, or delete a book from the database touching its trash bin icon."
                                           android:layout_width="wrap_content"
                                           android:layout_height="wrap_content"
                                           android:textColor="@color/Black"

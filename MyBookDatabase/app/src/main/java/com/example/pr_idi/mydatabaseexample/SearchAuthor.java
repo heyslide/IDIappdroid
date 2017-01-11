@@ -97,7 +97,7 @@ public class SearchAuthor extends Fragment {
 
                 String nomautor = lvBooks.getItemAtPosition(position).toString();
                 mEditText.setText("");
-                mTextView.setText("Books Written by: " + nomautor);
+                mTextView.setText("Books written by " + nomautor);
                 mTextView.setTextColor(Color.parseColor("#000080"));
                 mTextView.setVisibility(View.VISIBLE);
 

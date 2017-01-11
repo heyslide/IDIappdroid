@@ -6,6 +6,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
@@ -117,6 +118,7 @@ public class CategoryView extends Fragment implements RecyclerViewClickListener{
                             bookdata.deleteBook(book);
                             myadapter.deleteItem(position);
                             myadapter.notifyDataSetChanged();
+                            Snackbar.make(getView(), "The book was deleted :(", Snackbar.LENGTH_SHORT).show();
                         }
                     });
 
