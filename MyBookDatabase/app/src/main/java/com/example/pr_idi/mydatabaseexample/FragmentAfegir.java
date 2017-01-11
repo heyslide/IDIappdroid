@@ -61,7 +61,7 @@ public class FragmentAfegir extends Fragment {
                 else{
                     Integer anyint = Integer.parseInt(any);
                     book = bookData.createBook(titol, autor, publicador, anyint, categoria, valoracio);
-                    Snackbar.make(v, "Book added correctly!", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(v, "Book added correctly!", Snackbar.LENGTH_LONG).show();
                     title.setText("");
                     author.setText("");
                     publisher.setText("");

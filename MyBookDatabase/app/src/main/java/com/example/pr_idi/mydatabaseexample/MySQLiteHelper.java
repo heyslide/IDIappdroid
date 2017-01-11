@@ -6,8 +6,11 @@ package com.example.pr_idi.mydatabaseexample;
  */
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Matrix;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 
 public class MySQLiteHelper extends SQLiteOpenHelper {
@@ -24,6 +27,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "books.db";
     private static final int DATABASE_VERSION = 1;
+    private Context context;
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table " + TABLE_BOOKS + "( "
@@ -38,6 +42,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public MySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
+
     }
 
     private ContentValues createValues(String title, String author, String publisher, Integer year, String category, String rating) {
@@ -67,6 +73,24 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         database.insert(TABLE_BOOKS, null, values);
         values = createValues("Shadow Divers", "Robert Kurson", "Random House", 2004, "Non-fiction", "Bad");
         database.insert(TABLE_BOOKS, null, values);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this.context);
+        builder.setMessage("Welcome to Library on the go! Please open the menu (touch the" +
+                " icon in the corner or slide your finger across the screen) to start. If you have any doubts, check the Help page. " +
+                "We hope you enjoy using our app. Thanks!");
+        builder.setPositiveButton("OK!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {/*Res*/}
+        });
+
+        builder.setNegativeButton("Understood!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) { /*Res*/}
+        });
+        AlertDialog start = builder.create();
+        start.show();
+
+
     }
 
     @Override

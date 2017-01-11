@@ -61,11 +61,11 @@ public class SearchAuthor extends Fragment {
 
 
                    if (adapter.isEmpty()) {
-                       Snackbar.make(v, "There isn't any book written by " + nomautor + " in the database", Snackbar.LENGTH_SHORT).show();
+                       Snackbar.make(v, "There isn't any book written by " + nomautor + " in the database", Snackbar.LENGTH_LONG).show();
                        mTextView.setVisibility(View.GONE);
                    }
                    else {
-                       mTextView.setText("Books Writed by: " + nomautor);
+                       mTextView.setText("These are the books written by " + nomautor + ":");
                        mTextView.setVisibility(View.VISIBLE);
                        mEditText.setText("");
                    }
@@ -93,7 +93,7 @@ public class SearchAuthor extends Fragment {
 
                         String nomautor = lvBooks.getItemAtPosition(position).toString();
                         mEditText.setText("");
-                        mTextView.setText("Books Writed by: " + nomautor);
+                        mTextView.setText("These are the books written by " + nomautor + ":");
                         mTextView.setVisibility(View.VISIBLE);
 
                         mBooks = bookData.getBooksAuthor(nomautor);

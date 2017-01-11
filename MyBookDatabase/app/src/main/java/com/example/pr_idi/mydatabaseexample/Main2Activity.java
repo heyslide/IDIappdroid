@@ -42,7 +42,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
         MainFragment fragment = new MainFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragments, fragment).commit();
-        getSupportActionBar().setTitle("Library GO");
+        getSupportActionBar().setTitle("Library on the go");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -94,7 +94,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                 tancar = true;
                 fragment = new MainFragment();
                 FragmentTransition = true;
-                getSupportActionBar().setTitle("Library GO");
+                getSupportActionBar().setTitle("Library on the go");
                 //navigationView.getMenu().getItem(0).setChecked(true);
                 break;
 

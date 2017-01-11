@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Library GO</string>
-    <string name="title_activity_main2">Library GO</string>
+    <string name="app_name">Library on the go</string>
+    <string name="title_activity_main2">Library on the go</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
