@@ -1,5 +1,6 @@
 package com.example.pr_idi.mydatabaseexample;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -58,18 +59,17 @@ public class SearchAuthor extends Fragment {
                    adapter = new AdapterIDI(getActivity(), mBooks);
                    lvBooks.setAdapter(adapter);
 
-
-
                    if (adapter.isEmpty()) {
                        Snackbar.make(v, "There isn't any book written by " + nomautor + " in the database", Snackbar.LENGTH_SHORT).show();
                        mTextView.setVisibility(View.GONE);
                    }
                    else {
-                       mTextView.setText("Books Writed by: " + nomautor);
+                       mTextView.setText("Searched: " + nomautor);
                        mTextView.setVisibility(View.VISIBLE);
+                       mTextView.setTextColor(Color.parseColor("#000080"));
                        mEditText.setText("");
+                       Snackbar.make(v, "Select one book to display all the books from his author", Snackbar.LENGTH_LONG).show();
                    }
-
                }
            }
         });
@@ -82,32 +82,29 @@ public class SearchAuthor extends Fragment {
                 mBooks = bookData.getAllBooks();
                 autors = new AdapterAutors(getActivity(), mBooks);
                 lvBooks.setAdapter(autors);
-                mTextView.setText("");
-                mTextView.setVisibility(View.GONE);
-
-                Snackbar.make(v, "Choose one of these authors to see all their books.", Snackbar.LENGTH_LONG).show();
-
-                lvBooks.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                        String nomautor = lvBooks.getItemAtPosition(position).toString();
-                        mEditText.setText("");
-                        mTextView.setText("Books Writed by: " + nomautor);
-                        mTextView.setVisibility(View.VISIBLE);
-
-                        mBooks = bookData.getBooksAuthor(nomautor);
-                        adapter = new AdapterIDI(getActivity(), mBooks);
-                        lvBooks.setAdapter(adapter);
-
-                    }
-                });
+                mTextView.setText("Select One author for see his books:");
+                mTextView.setTextColor(Color.parseColor("#689F38"));
+                mTextView.setVisibility(View.VISIBLE);
 
             }
         });
 
+        lvBooks.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                String nomautor = lvBooks.getItemAtPosition(position).toString();
+                mEditText.setText("");
+                mTextView.setText("Books Written by: " + nomautor);
+                mTextView.setTextColor(Color.parseColor("#000080"));
+                mTextView.setVisibility(View.VISIBLE);
 
+                mBooks = bookData.getBooksAuthor(nomautor);
+                adapter = new AdapterIDI(getActivity(), mBooks);
+                lvBooks.setAdapter(adapter);
+
+            }
+        });
 
         return v;
 

@@ -207,6 +207,18 @@ public class BookData {
         database.update(MySQLiteHelper.TABLE_BOOKS, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);
     }
 
+/*    public boolean buscaAutor(String nomautor) {
 
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_BOOKS, null,
+                MySQLiteHelper.COLUMN_AUTHOR + nomautor + " COLLATE NOCASE", null, null, null, MySQLiteHelper.COLUMN_AUTHOR);
+
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            return true;
+        }
+        cursor.close();
+        return false;
+    }*/
 
 }
